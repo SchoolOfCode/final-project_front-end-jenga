@@ -8,7 +8,7 @@ const mapStyles = {
   width: "45vw",
   height: "45vh",
 };
-let GoogleAPIKey = "AIzaSyCYaVEFJdt31pAuDNOCwrZyWCs1Wf-8M48";
+let GoogleAPIKey = process.env.REACT_APP_GOOGLE;
 
 export class MapContainer extends Component {
   render() {
