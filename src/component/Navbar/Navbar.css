@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis&display=swap");
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+}
+.home-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+.nav-point {
+  list-style: none;
+}
+.title {
+  font-family: "Dosis", sans-serif;
+}
