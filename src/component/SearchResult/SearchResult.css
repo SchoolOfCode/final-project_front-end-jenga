@@ -5,19 +5,6 @@
     height: 100vh;
 }
 
-.test{
-    font-family: "Dosis", sans-serif;
-    font-size:3rem;
-    font-weight:800;
-}
-
-.location-image {
-     width: 100vw;
-     height: 53vh;
-     object-fit: cover;
-     overflow: hidden;
-}
-
 .top-picture {
     height: 53vh;
     display: flex;
@@ -27,25 +14,41 @@
     width: 100vw;
 }
 
+.location-image {
+    width: 100vw;
+    height: 63vh;
+    object-fit: cover;
+}
+
+.country-name{
+    position: absolute;
+    font-family: "Dosis", sans-serif;
+    font-size:  5rem;
+    font-weight:800;
+    margin-top: 20vh;
+    margin-left: 5vw;
+    color: white;
+    text-shadow: -1px 0 #3c91e6, 0 1px #3c91e6, 1px 0 #3c91e6, 0 -1px #3c91e6;
+    letter-spacing: .2rem;
+}
+
 .bottom-results {
     display: flex;
     flex-direction: row;
     height: 45vh;
-    background-color: red;
     align-self: flex-end;
-
 }
 
 .map{
     border-radius: 5%;
-    width: 45vw;
-    background-color: green;
+    width: 40vw;
+    background-color: #05d2a2;
     z-index: 2;
 }
 
 .text{
     border-radius: 5%;
-    width: 55vw;
+    width: 60vw;
     background-color: yellow;
     z-index: 2;
 }

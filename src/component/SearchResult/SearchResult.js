@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import "./SearchResult.css";
+import MapContainer from "../Map/Map.js";
 
 const SearchResult = () => {
   const [imageUrl, setImageUrl] = useState("");
-  const location = "London";
+  const searchTerm = "London";
   const ApiKey = "-csYdQoUNZY1UOcp4zEnsOVjNZyBXTmDfjJcair8Q6o";
-  const requestUrl =
-  `https://api.unsplash.com/search/photos?query=${location}&orientation=landscape&client_id=${ApiKey}`;
+  const requestUrl = `https://api.unsplash.com/search/photos?query=${searchTerm}&orientation=landscape&client_id=${ApiKey}`;
 
   useEffect(() => {
     getLocationImage();
@@ -24,11 +24,14 @@ const SearchResult = () => {
     <div className="results-page">
       <div className="top-picture">
         <img src={imageUrl} alt="Location" className="location-image"></img>
-        {/* <p className="test">LONDON</p> */}
+        <p className="country-name">{searchTerm.toUpperCase()}</p>
       </div>
       <div className="bottom-results">
         <div className="text"></div>
-        <div className="map"></div>
+        <div className="map">
+          {" "}
+          <MapContainer />
+        </div>
       </div>
     </div>
   );
