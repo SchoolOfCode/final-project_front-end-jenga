@@ -1,0 +1,8 @@
+.results-page {
+    position:absolute;
+    display: flex;
+    justify-content: center;
+    background-color: aqua;
+    width: 800px;
+    height: 100%;
+}
