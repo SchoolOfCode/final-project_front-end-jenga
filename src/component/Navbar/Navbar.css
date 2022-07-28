@@ -2,6 +2,10 @@
 .nav-container {
   display: flex;
   justify-content: space-between;
+  margin-left: 1vw;
+  margin-right: 2vw;
+  margin-bottom: 15vw;
+  text-align: center;
 }
 .home-buttons {
   display: flex;
@@ -9,7 +13,15 @@
 }
 .nav-point {
   list-style: none;
+  margin-left: 2vw;
 }
 .title {
   font-family: "Dosis", sans-serif;
+  font-size: 5.5vw;
+  color: white;
+  margin-right: -10vw;
+}
+
+.log {
+  margin-right: -1.5vw;
 }

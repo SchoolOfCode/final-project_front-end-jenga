@@ -1,6 +1,8 @@
 import "./App.css";
 import Navbar from "../Navbar/Navbar.js";
 import Landingpage from "../../images/Landingpage.jpg";
+import SearchBar from "../../component/SearchBar/searchBar.js";
+
 function App() {
   return (
     <div
@@ -12,7 +14,7 @@ function App() {
       }}
     >
       <Navbar />
-      <h1>I am a beautiful Final Project App!</h1>
+      <SearchBar />
     </div>
   );
 }

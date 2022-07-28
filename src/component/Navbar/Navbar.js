@@ -5,9 +5,9 @@ const Navbar = () => {
       <div className="nav-appname">
         <a className="nav-link" href="/">
           <svg
-            width="77"
-            height="144"
-            viewBox="0 0 77 144"
+            width="45"
+            height="90"
+            viewBox="0 0 77 134"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -23,12 +23,12 @@ const Navbar = () => {
       <div className="title"> FindersKeepers</div>
       <ul className="home-buttons">
         <li className="nav-point">
-          <a className="nav-link" href="/">
+          <button className="nav-link" href="/">
             home
-          </a>
+          </button>
         </li>
         <li className="nav-point">
-          <button className="nav-link">log in</button>
+          <button className="nav-link log">log in</button>
         </li>
         <li className="nav-point">
           <button className="nav-link">sign up</button>
