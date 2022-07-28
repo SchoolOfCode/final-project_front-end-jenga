@@ -44,7 +44,7 @@ class SearchBar extends React.Component {
           <div>
             <input
               {...getInputProps({
-                placeholder: "Search Places ...",
+                placeholder: "SEARCH",
                 className: "location-search-input",
               })}
               // onChange={this.props.searchChange}

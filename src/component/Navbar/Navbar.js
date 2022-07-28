@@ -20,18 +20,18 @@ const Navbar = () => {
           </svg>
         </a>
       </div>
-      <div className="title"> FindersKeepers</div>
+      <div className="title"> FINDERS KEEPERS</div>
       <ul className="home-buttons">
         <li className="nav-point">
           <button className="nav-link" href="/">
-            home
+            HOME
           </button>
         </li>
         <li className="nav-point">
-          <button className="nav-link log">log in</button>
+          <button className="nav-link log">LOG IN</button>
         </li>
         <li className="nav-point">
-          <button className="nav-link">sign up</button>
+          <button className="nav-link sign">SIGN UP</button>
         </li>
       </ul>
     </nav>
