@@ -1,4 +1,5 @@
 import React from "react";
+import "./searchBar.css";
 import PlacesAutocomplete, {
   geocodeByAddress,
   getLatLng,
@@ -14,6 +15,9 @@ class SearchBar extends React.Component {
 
   handleChange = (address) => {
     this.setState({ address });
+    console.log(address);
+    this.props.setSearchTerm(address);
+    console.log("this works", this.props.searchTerm);
   };
 
   handleSelect = (address) => {
@@ -33,7 +37,7 @@ class SearchBar extends React.Component {
       <PlacesAutocomplete
         value={this.state.address}
         onChange={this.handleChange}
-        onSelect={this.handleSelect}
+        // onSelect={this.handleSelect}
         searchOptions={searchOptions}
       >
         {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
@@ -43,6 +47,8 @@ class SearchBar extends React.Component {
                 placeholder: "Search Places ...",
                 className: "location-search-input",
               })}
+              // onChange={this.props.searchChange}
+              value={this.props.address}
             />
             <div className="autocomplete-dropdown-container">
               {loading && <div>Loading...</div>}
@@ -52,8 +58,8 @@ class SearchBar extends React.Component {
                   : "suggestion-item";
                 // inline style for demonstration purpose
                 const style = suggestion.active
-                  ? { backgroundColor: "#fafafa", cursor: "pointer" }
-                  : { backgroundColor: "#ffffff", cursor: "pointer" };
+                  ? { backgroundColor: "none", cursor: "pointer" }
+                  : { backgroundColor: "none", cursor: "pointer" };
                 return (
                   <div
                     {...getSuggestionItemProps(suggestion, {

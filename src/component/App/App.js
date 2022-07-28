@@ -2,8 +2,10 @@ import "./App.css";
 import Navbar from "../Navbar/Navbar.js";
 import Landingpage from "../../images/Landingpage.jpg";
 import SearchBar from "../../component/SearchBar/searchBar.js";
-
+import { useState } from "react";
 function App() {
+  const [searchTerm, setSearchTerm] = useState("");
+
   return (
     <div
       className="App"
@@ -14,7 +16,9 @@ function App() {
       }}
     >
       <Navbar />
-      <SearchBar />
+      <div className="search-tools">
+        <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      </div>
     </div>
   );
 }
