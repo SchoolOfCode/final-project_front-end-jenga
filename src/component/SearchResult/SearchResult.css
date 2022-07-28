@@ -1,7 +1,29 @@
 .results-page {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  background-color: blue;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.top-picture {
+    height: 50vh;
+    background-color: blue;
+}
+
+.bottom-results {
+    display: flex;
+    flex-direction: row;
+    height: 50vh;
+    background-color: red;
+}
+
+.map{
+    border-radius: 5%;
+    width: 50vw;
+    background-color: green;
+}
+
+.text{
+    border-radius: 5%;
+    width: 50vw;
+    background-color: yellow;
 }
