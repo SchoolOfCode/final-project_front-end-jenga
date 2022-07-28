@@ -1,29 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis&display=swap");
+
 .results-page {
     display: flex;
-    flex-direction: column;
     height: 100vh;
 }
 
+.test{
+    font-family: "Dosis", sans-serif;
+    font-size:3rem;
+    font-weight:800;
+}
+
+.location-image {
+     width: 100vw;
+     height: 53vh;
+     object-fit: cover;
+     overflow: hidden;
+}
+
 .top-picture {
-    height: 50vh;
-    background-color: blue;
+    height: 53vh;
+    display: flex;
+    z-index: 1;
+    position: absolute;
+    top: 0%;
+    width: 100vw;
 }
 
 .bottom-results {
     display: flex;
     flex-direction: row;
-    height: 50vh;
+    height: 45vh;
     background-color: red;
+    align-self: flex-end;
+
 }
 
 .map{
     border-radius: 5%;
-    width: 50vw;
+    width: 45vw;
     background-color: green;
+    z-index: 2;
 }
 
 .text{
     border-radius: 5%;
-    width: 50vw;
+    width: 55vw;
     background-color: yellow;
+    z-index: 2;
 }
