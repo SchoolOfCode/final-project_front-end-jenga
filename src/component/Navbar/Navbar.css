@@ -5,9 +5,10 @@
   justify-content: space-between;
   margin-left: 1vw;
   margin-right: 2vw;
-  margin-bottom: 15vw;
+  /* margin-top: 15vw; */
   text-align: center;
-
+  position: absolute;
+  z-index: 3;
 }
 .home-buttons {
   display: flex;

@@ -25,10 +25,11 @@ const Navbar = () => {
       <div className="title"> FINDERS KEEPERS</div>
       <ul className="home-buttons">
         <li className="nav-point">
-        <Link to ="/"><button className="nav-link">
-            HOME
-          </button></Link>
-      
+          <Link to="/">
+            <button className="nav-link">HOME</button>
+          </Link>
+
+          <Link to="/SearchResult">search Page</Link>
         </li>
         <li className="nav-point">
           <button className="nav-link log">LOG IN</button>

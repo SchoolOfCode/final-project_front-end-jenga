@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import "./SearchResult.css";
 import MapContainer from "../Map/Map.js";
 
-const SearchResult = () => {
+const SearchResult = ({ searchTerm }) => {
   const [imageUrl, setImageUrl] = useState("");
-  const searchTerm = "London";
+  // const searchTerm = "London";
   const ApiKey = process.env.REACT_APP_UNSPLASH;
   console.log(ApiKey);
   const requestUrl = `https://api.unsplash.com/search/photos?query=${searchTerm}&orientation=landscape&client_id=${ApiKey}`;
