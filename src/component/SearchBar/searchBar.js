@@ -48,7 +48,7 @@ class SearchBar extends React.Component {
                 className: "location-search-input",
               })}
               // onChange={this.props.searchChange}
-              value={this.props.address}
+              value={this.props.searchTerm}
             />
             <div className="autocomplete-dropdown-container">
               {loading && <div>Loading...</div>}

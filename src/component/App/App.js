@@ -1,26 +1,23 @@
 // import SearchResult from "../SearchResult/SearchResult";
 import "./App.css";
 import Navbar from "../Navbar/Navbar.js";
-import Landingpage from "../../images/Landingpage.jpg";
-import SearchBar from "../../component/SearchBar/searchBar.js";
+import LandingPage from "../LandingPage/LandingPage.js"
 import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
 
   return (
-    <div
-      className="App"
-      style={{
-        backgroundImage: `url(${Landingpage})`,
-        height: "100vh",
-        backgroundSize: "100% 100%",
-      }}
-    >
-      <Navbar />
-      <div className="search-tools">
-        <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-      </div>
-    </div>
+    
+    <Router>
+      <Navbar/>
+      <Routes>
+      <Route exact path='/' element={< LandingPage searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>}></Route>
+				{/* <Route exact path='/about' element={< About />}></Route>
+				<Route exact path='/contact' element={< Contact />}></Route> */}
+      </Routes>
+    </Router>
   );
 }
 
