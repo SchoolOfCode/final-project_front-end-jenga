@@ -21,6 +21,9 @@ class SearchBar extends React.Component {
   };
 
   handleSelect = (address) => {
+    this.props.setSearchTerm(address);
+    this.props.navigate("/SearchResult");
+
     geocodeByAddress(address)
       .then((results) => getLatLng(results[0]))
       .then((latLng) => console.log("Success", latLng))
@@ -37,7 +40,7 @@ class SearchBar extends React.Component {
       <PlacesAutocomplete
         value={this.state.address}
         onChange={this.handleChange}
-        // onSelect={this.handleSelect}
+        onSelect={this.handleSelect}
         searchOptions={searchOptions}
       >
         {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
