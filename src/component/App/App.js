@@ -1,3 +1,4 @@
+// import SearchResult from "../SearchResult/SearchResult";
 import "./App.css";
 import Navbar from "../Navbar/Navbar.js";
 import Landingpage from "../../images/Landingpage.jpg";
