@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-jenga1-dev-214020-authRole",
+      "UnauthRoleArn": "arn:aws:iam::885529891148:role/amplify-jenga1-dev-214020-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::885529891148:role/amplify-jenga1-dev-214020-authRole",
+      "Region": "eu-west-1",
+      "DeploymentBucketName": "amplify-jenga1-dev-214020-deployment",
+      "UnauthRoleName": "amplify-jenga1-dev-214020-unauthRole",
+      "StackName": "amplify-jenga1-dev-214020",
+      "StackId": "arn:aws:cloudformation:eu-west-1:885529891148:stack/amplify-jenga1-dev-214020/295b5eb0-11da-11ed-a181-062ea528d607",
+      "AmplifyAppId": "d3v2vnpi5p7pq"
+    },
+    "categories": {
+      "auth": {
+        "jenga18c042411": {}
+      }
+    }
+  }
+}
