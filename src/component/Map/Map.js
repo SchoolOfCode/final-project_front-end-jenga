@@ -7,7 +7,7 @@ const lng = -10.1276;
 
 const mapStyles = {
   width: "38vw",
-  height: "45vh",
+  height: "43vh",
 };
 let GoogleAPIKey = process.env.REACT_APP_GOOGLE;
 
@@ -15,7 +15,7 @@ export class MapContainer extends Component {
   render() {
     return (
       <Map
-        className="container"
+        className="googleMap"
         google={this.props.google}
         zoom={8}
         style={mapStyles}

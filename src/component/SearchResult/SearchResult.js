@@ -3,7 +3,6 @@ import "./SearchResult.css";
 import MapContainer from "../Map/Map.js";
 
 const SearchResult = ({ searchTerm }) => {
-  const [isLoading, setIsLoading] = useState(true);
   const [imageUrl, setImageUrl] = useState("");
   // const searchTerm = "London";
   const ApiKey = process.env.REACT_APP_UNSPLASH;
@@ -20,31 +19,25 @@ const SearchResult = ({ searchTerm }) => {
     const data = await response.json();
     let oneImage = data.results[randomNumber];
     setImageUrl(oneImage.urls.full);
-    setTimeout(loadingState, 2000);
-  }
-
-  function loadingState() {
-    setIsLoading(false);
   }
 
   return (
-    <div>
-      {isLoading === true ? (
-        <div>Loading...</div>
-      ) : (
-        <div className="results-page">
-          <div className="top-picture">
-            <img src={imageUrl} alt="Location" className="location-image"></img>
-            <p className="country-name">{searchTerm.toUpperCase()}</p>
-          </div>
-          <div className="bottom-results">
-            <div className="text"></div>
-            <div className="map">
-              <MapContainer />
-            </div>
-          </div>
+    <div className="results-page">
+      <div className="top-picture">
+        <img src={imageUrl} alt="Location" className="location-image"></img>
+        <div class="lds-facebook">
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
-      )}
+        <p className="country-name">{searchTerm.toUpperCase()}</p>
+      </div>
+      <div className="bottom-results">
+        <div className="text"></div>
+        <div className="map">
+          <MapContainer />
+        </div>
+      </div>
     </div>
   );
 };

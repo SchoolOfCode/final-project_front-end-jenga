@@ -1,4 +1,10 @@
-.container{
-    width: 38vw !important;
-    height: 45vh !important;
+.googleMap{
+    width: 35vw !important;
+    height: 42vh !important;
+    margin-left: -19%;
+    margin-top: 0.75%;
+}
+
+.googleMap > div {
+    border-radius: 10px;
 }
