@@ -18,6 +18,12 @@ const SearchResult = ({ searchTerm }) => {
     const data = await response.json();
     let oneImage = data.results[randomNumber];
     setImageUrl(oneImage.urls.full);
+
+    const govResponse = await fetch(
+      `https://www.gov.uk/api/content/foreign-travel-advice/${searchTerm}`
+    );
+    const govData = await govResponse.json();
+    console.log(govData);
   }
 
   return (
