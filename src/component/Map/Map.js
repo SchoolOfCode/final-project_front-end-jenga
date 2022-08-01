@@ -6,7 +6,7 @@ const lat = 51.5072;
 const lng = -10.1276;
 
 const mapStyles = {
-  width: "38vw",
+  width: "39vw",
   height: "43vh",
 };
 let GoogleAPIKey = process.env.REACT_APP_GOOGLE;

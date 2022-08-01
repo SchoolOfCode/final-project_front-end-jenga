@@ -1,10 +1,10 @@
 .googleMap{
     width: 35vw !important;
     height: 42vh !important;
-    margin-left: -19%;
-    margin-top: 0.75%;
+    margin-left: -19.45%;
+    margin-top: 0.5%;
 }
 
 .googleMap > div {
-    border-radius: 10px;
+    border-radius: 15px;
 }
