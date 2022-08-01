@@ -2,12 +2,13 @@
 
 .location-search-input {
   height: 3.5vw;
-  width: 60vw;
+  width: 40vw;
   border-radius: 1vh;
   border-color: transparent;
   font-size: 2vw;
   font-family: "Dosis", sans-serif;
-  margin-top: 10vw;
+  margin-top: 20vw;
+  margin-right: 20vw;
 }
 
 .autocomplete-dropdown-container {

@@ -13,6 +13,7 @@
 .home-buttons {
   display: flex;
   justify-content: space-around;
+  margin-left: 44vw;
 }
 .nav-point {
   list-style: none;
@@ -22,7 +23,8 @@
   font-family: "Dosis", sans-serif;
   font-size: 5.5vw;
   color: white;
-  margin-right: -10vw;
+  margin-right: -30vw;
+  margin-left: 22vw;
   -webkit-text-stroke-width: 0.1vw;
   text-shadow: 3px 3px rgb(93, 91, 91);
 }
@@ -39,5 +41,4 @@
 
 .sign {
   background-color: #3c91e6;
-  border-width: 1px;
 }
