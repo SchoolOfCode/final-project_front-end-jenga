@@ -2,7 +2,8 @@ import SearchBar from "../../component/SearchBar/searchBar.js";
 import LandingImage from "../../images/LandingImage.jpg";
 import { useNavigate } from "react-router-dom";
 
-function LandingPage({ searchTerm, setSearchTerm }) {
+
+function LandingPage({ searchTerm, setSearchTerm, setCoords }) {
   let navigate = useNavigate();
   return (
     <div
@@ -18,6 +19,7 @@ function LandingPage({ searchTerm, setSearchTerm }) {
           searchTerm={searchTerm}
           setSearchTerm={setSearchTerm}
           navigate={navigate}
+          setCoords={setCoords}
         />
       </div>
     </div>
