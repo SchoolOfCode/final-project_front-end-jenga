@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./SearchResult.css";
 import MapContainer from "../Map/Map.js";
 
-const SearchResult = ({ searchTerm }) => {
+const SearchResult = ({ searchTerm, coords }) => {
   const [imageUrl, setImageUrl] = useState("");
   const [govAPI, setGovAPI] = useState("");
   const searchTermGov = searchTerm.toLowerCase();
@@ -40,7 +40,7 @@ const SearchResult = ({ searchTerm }) => {
     <div className="results-page">
       <div className="top-picture">
         <img src={imageUrl} alt="Location" className="location-image"></img>
-        <div class="lds-facebook">
+        <div className="lds-facebook">
           <div></div>
           <div></div>
           <div></div>
@@ -53,7 +53,7 @@ const SearchResult = ({ searchTerm }) => {
           dangerouslySetInnerHTML={{ __html: govAPI }}
         ></div>
         <div className="map">
-          <MapContainer />
+          <MapContainer coords={coords} />
         </div>
       </div>
     </div>
