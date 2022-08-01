@@ -13,12 +13,6 @@ const SearchResult = ({ searchTerm }) => {
     getLocationImage();
   }, []);
 
-  let ConvertStringToHTML = function (str) {
-    let parser = new DOMParser();
-    let doc = parser.parseFromString(str, "text/html");
-    return doc.body;
-  };
-
   async function getLocationImage() {
     let randomNumber = Math.floor(Math.random() * 5);
     const response = await fetch(requestUrl);
@@ -27,14 +21,12 @@ const SearchResult = ({ searchTerm }) => {
     setImageUrl(oneImage.urls.full);
 
     const govResponse = await fetch(
-      `https://www.gov.uk/api/content/foreign-travel-advice/${searchTermGov}`
+      `https://cors-anywhere.herokuapp.com/https://www.gov.uk/api/content/foreign-travel-advice/${searchTermGov}`
     );
     const govData = await govResponse.json();
     console.log(govData.details.summary);
     setGovAPI(govData.details.summary);
   }
-
-  let govText = ConvertStringToHTML(govAPI);
 
   return (
     <div className="results-page">
