@@ -30,7 +30,6 @@ const SearchResult = ({ searchTerm }) => {
       <div className="bottom-results">
         <div className="text"></div>
         <div className="map">
-          {" "}
           <MapContainer />
         </div>
       </div>

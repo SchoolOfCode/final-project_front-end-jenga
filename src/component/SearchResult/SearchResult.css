@@ -43,6 +43,7 @@
 .map {
   border-radius: 5%;
   width: 40vw;
+  max-width: 40vw;
   background-color: #05d2a2;
   /* z-index: 2; */
 }
