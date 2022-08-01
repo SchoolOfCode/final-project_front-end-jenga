@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./searchBar.css";
 import PlacesAutocomplete, {
   geocodeByAddress,
@@ -7,76 +7,73 @@ import PlacesAutocomplete, {
 
 const google = window.google;
 
-class SearchBar extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { address: "" };
-  }
+export default function SearchBar({ setSearchTerm, searchTerm, navigate }) {
+  const [address, setAddress] = useState("");
 
-  handleChange = (address) => {
-    this.setState({ address });
+  const handleChange = (addressInput) => {
+    setAddress(addressInput);
     console.log(address);
-    this.props.setSearchTerm(address);
-    console.log("this works", this.props.searchTerm);
+    setSearchTerm(addressInput);
+    console.log("this works", searchTerm);
   };
 
-  handleSelect = (address) => {
-    geocodeByAddress(address)
-      .then((results) => getLatLng(results[0]))
+  const handleSelect = (addressInput) => {
+    setSearchTerm(addressInput);
+    navigate("/SearchResult");
+
+    geocodeByAddress(addressInput)
+      .then((results) => getLatLng(results[0])) //not using this function only Console logging
       .then((latLng) => console.log("Success", latLng))
       .catch((error) => console.error("Error", error));
   };
 
-  render() {
-    const searchOptions = {
-      location: new google.maps.LatLng(-34, 151),
-      radius: 100,
-      types: ["country"],
-    };
-    return (
-      <PlacesAutocomplete
-        value={this.state.address}
-        onChange={this.handleChange}
-        // onSelect={this.handleSelect}
-        searchOptions={searchOptions}
-      >
-        {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
-          <div>
-            <input
-              {...getInputProps({
-                placeholder: "SEARCH",
-                className: "location-search-input",
-              })}
-              // onChange={this.props.searchChange}
-              value={this.props.address}
-            />
-            <div className="autocomplete-dropdown-container">
-              {loading && <div>Loading...</div>}
-              {suggestions.map((suggestion) => {
-                const className = suggestion.active
-                  ? "suggestion-item--active"
-                  : "suggestion-item";
-                // inline style for demonstration purpose
-                const style = suggestion.active
-                  ? { backgroundColor: "none", cursor: "pointer" }
-                  : { backgroundColor: "none", cursor: "pointer" };
-                return (
-                  <div
-                    {...getSuggestionItemProps(suggestion, {
-                      className,
-                      style,
-                    })}
-                  >
-                    <span>{suggestion.description}</span>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        )}
-      </PlacesAutocomplete>
-    );
-  }
-}
+  const searchOptions = {
+    location: new google.maps.LatLng(-34, 151),
+    radius: 100,
+    types: ["country"],
+  };
 
-export default SearchBar;
+  return (
+    <PlacesAutocomplete
+      value={address}
+      onChange={handleChange}
+      onSelect={handleSelect}
+      searchOptions={searchOptions}
+    >
+      {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
+        <div>
+          <input
+            {...getInputProps({
+              placeholder: "SEARCH",
+              className: "location-search-input",
+            })}
+            // onChange={searchChange}
+            value={searchTerm}
+          />
+          <div className="autocomplete-dropdown-container">
+            {loading && <div>Loading...</div>}
+            {suggestions.map((suggestion) => {
+              const className = suggestion.active
+                ? "suggestion-item--active"
+                : "suggestion-item";
+              // inline style for demonstration purpose
+              const style = suggestion.active
+                ? { backgroundColor: "none", cursor: "pointer" }
+                : { backgroundColor: "none", cursor: "pointer" };
+              return (
+                <div
+                  {...getSuggestionItemProps(suggestion, {
+                    className,
+                    style,
+                  })}
+                >
+                  <span>{suggestion.description}</span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
+    </PlacesAutocomplete>
+  );
+}

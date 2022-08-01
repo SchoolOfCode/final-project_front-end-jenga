@@ -1,4 +1,6 @@
 import "./Navbar.css";
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
   return (
     <nav className="nav-container" aria-label="navbar">
@@ -23,9 +25,11 @@ const Navbar = () => {
       <div className="title"> FINDERS KEEPERS</div>
       <ul className="home-buttons">
         <li className="nav-point">
-          <button className="nav-link" href="/">
-            HOME
-          </button>
+          <Link to="/">
+            <button className="nav-link">HOME</button>
+          </Link>
+
+          <Link to="/SearchResult">search Page</Link>
         </li>
         <li className="nav-point">
           <button className="nav-link log">LOG IN</button>
