@@ -54,6 +54,7 @@
 .text {
   border-radius: 15px 15px 0px 0px;
   width: 60vw;
+  overflow: scroll;
   background-color: whitesmoke;
   z-index: 4;
 }
