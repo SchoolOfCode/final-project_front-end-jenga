@@ -7,7 +7,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
-
+  const [coords, setCoords] = useState({});
+  console.log(coords);
   return (
     <Router>
       <Navbar />
@@ -18,12 +19,13 @@ function App() {
             <LandingPage
               searchTerm={searchTerm}
               setSearchTerm={setSearchTerm}
+              setCoords={setCoords}
             />
           }
         ></Route>
         <Route
           path="/SearchResult"
-          element={<SearchResult searchTerm={searchTerm} />}
+          element={<SearchResult searchTerm={searchTerm} coords={coords} />}
         ></Route>
       </Routes>
     </Router>
