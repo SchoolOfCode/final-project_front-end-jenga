@@ -6,7 +6,6 @@ const SearchResult = ({ searchTerm }) => {
   const [imageUrl, setImageUrl] = useState("");
   // const searchTerm = "London";
   const ApiKey = process.env.REACT_APP_UNSPLASH;
-  console.log(ApiKey);
   const requestUrl = `https://api.unsplash.com/search/photos?query=${searchTerm}&orientation=landscape&client_id=${ApiKey}`;
 
   useEffect(() => {
