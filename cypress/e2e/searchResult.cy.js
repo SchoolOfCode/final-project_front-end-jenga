@@ -1,6 +1,7 @@
 const url = "http://localhost:3000/";
-describe("Landing Page", () => {
-  it("should display correct text content", () => {
+
+describe("Search Results Page", () => {
+  it.only("should display correct text content", () => {
     cy.visit(url);
     cy.get(".title").should("contain", "FINDERS KEEPERS");
     cy.get(".location-search-input")
@@ -17,11 +18,10 @@ describe("Landing Page", () => {
       .click()
       .url()
       .should("eq", `${url}SearchResult`);
-
-    cy.get("a > .nav-link").should("contain", "HOME");
+    cy.get(".title").should("contain", "FINDERS KEEPERS");
+    cy.get(".country-name").should("contain", "DENMARK");
+    cy.get(".googleMap").should("be.visible");
     cy.get("a > .nav-link").click();
     cy.get(".title").should("contain", "FINDERS KEEPERS");
   });
 });
-// From Line 6-10, we are getting the dropdown menu by typing letter "d" which then gives Denmark as the first choice in the dropdown
-//menu. It then selects and clicks Denmark.
