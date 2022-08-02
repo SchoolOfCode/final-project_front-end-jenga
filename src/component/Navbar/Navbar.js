@@ -1,5 +1,7 @@
 import "./Navbar.css";
 import { Link } from "react-router-dom";
+import LoginButton from "../Authentication/LoginButton";
+import LogoutButton from "../Authentication/LogoutButton";
 
 const Navbar = ({ isLoggedIn }) => {
   console.log(isLoggedIn);
@@ -31,9 +33,10 @@ const Navbar = ({ isLoggedIn }) => {
           </Link>
         </li>
         <li className="nav-point">
-          <Link to="/ProfilePage">
-            <button className="nav-link log">PROFILE</button>
+          <Link to="/Profile">
+            <LoginButton />
           </Link>
+          <LogoutButton />
         </li>
       </ul>
     </nav>

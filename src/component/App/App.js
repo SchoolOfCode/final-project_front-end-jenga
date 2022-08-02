@@ -4,7 +4,7 @@ import LandingPage from "../LandingPage/LandingPage.js";
 import SearchResult from "../SearchResult/SearchResult.js";
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import ProfilePage from "../ProfilePage/ProfilePage";
+import Profile from "../ProfilePage/Profile.js";
 import { Amplify } from "aws-amplify";
 import awsExports from "../../aws-exports";
 import "@aws-amplify/ui-react/styles.css";
@@ -37,9 +37,9 @@ function App({ signOut, user }) {
           element={<SearchResult searchTerm={searchTerm} coords={coords} />}
         ></Route>
         <Route
-          path="/ProfilePage"
+          path="/Profile"
           element={
-            <ProfilePage
+            <Profile
               signOut={signOut}
               user={user}
               setIsLoggedIn={setIsLoggedIn}
