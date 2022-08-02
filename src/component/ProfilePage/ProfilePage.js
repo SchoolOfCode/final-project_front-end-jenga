@@ -1,16 +1,22 @@
-import { Amplify } from "aws-amplify";
-
 import { withAuthenticator } from "@aws-amplify/ui-react";
-import "@aws-amplify/ui-react/styles.css";
 import "./ProfilePage.css";
+import { Auth } from "aws-amplify";
 
-const ProfilePage = ({ signOut, user }) => {
+const ProfilePage = ({ signOut, user, setIsLoggedIn }) => {
+  function userSignOut() {
+    signOut();
+    setIsLoggedIn(false);
+  }
+
+  //setIsLoggedIn(user.username === "undefined");
+
   return (
     <div className="login-div">
       <h2>Profile Page</h2>
       <p>Hello {user.username}</p>
       {console.log(user)}
-      <button onClick={signOut}>Logout</button>
+      {setIsLoggedIn(true)}
+      <button onClick={userSignOut}>Logout</button>
     </div>
   );
 };
