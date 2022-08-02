@@ -18,8 +18,27 @@
   min-width: 15vw;
   /* background-color: green; */
   margin-right: -5vw;
-  
-  
+}
+
+.home {
+  margin-right: -6vw;
+
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 3px;
+  padding: 7px 18px;
+  border: 0;
+  color: #000021;
+  background: #05d2a2;
+  line-height: 1.15;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+.home:hover:hover {
+  transition: all 0.1s ease;
+  box-shadow: 0 0 0 0 #fff, 0 0 0 3px #05d2a2;
 }
 .nav-point {
   list-style: none;
@@ -37,7 +56,26 @@
 }
 
 .log {
-  margin-right: -5vw;
+  margin-right: -7vw;
+
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 3px;
+  padding: 7px 18px;
+  border: 0;
+  letter-spacing: 1px;
+
+  color: rgb(16, 16, 16);
+  /* background: rgb(182, 179, 179); */
+  background: #05d2a2;
+  line-height: 1.15;
+  font-size: 16px;
+}
+.log:hover {
+  transition: all 0.1s ease;
+  box-shadow: 0 0 0 0 #fff, 0 0 0 3px #05d2a2;
 }
 
 .nav-link {
@@ -49,4 +87,39 @@
 .sign {
   background-color: #3c91e6;
   margin-left: -3vw;
+  letter-spacing: 1px;
+  margin-right: -5vw;
+
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 3px;
+  padding: 7px 18px;
+  border: 0;
+  color: hsl(240, 17%, 98%);
+  background: #3c91e6;
+  line-height: 1.15;
+  font-size: 16px;
+}
+.sign:hover {
+  transition: all 0.1s ease;
+  box-shadow: 0 0 0 0 #fff, 0 0 0 3px #3c91e6;
+}
+/* svg {
+  display: flex;
+  z-index: 9999;
+  width: 10rem;
+  height: 10rem;
+  fill: #fff;
+  background-color: aqua;
+} */
+img {
+  width: 100px;
+  height: 100px;
+  padding-left: 20px;
+  padding-top: 20px;
+
+  display: flex;
+  justify-content: center;
 }
