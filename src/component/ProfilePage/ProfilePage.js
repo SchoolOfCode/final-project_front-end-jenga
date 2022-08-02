@@ -10,7 +10,7 @@ const ProfilePage = ({ signOut, user }) => {
       <h2>Profile Page</h2>
       <p>Hello {user.username}</p>
       {console.log(user)}
-      <button onClick={signOut}>Sign out</button>
+      <button onClick={signOut}>Logout</button>
     </div>
   );
 };
