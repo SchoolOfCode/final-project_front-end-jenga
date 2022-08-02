@@ -5,7 +5,7 @@ const Navbar = () => {
     <nav className="nav-container" aria-label="navbar">
       <div className="nav-appname">
         <a className="nav-link" href="/">
-          <img  src={svg} alt="SVG" />
+          <img className="balloon" src={svg} alt="SVG" />
         </a>
       </div>
       <div className="title"> FINDERS KEEPERS</div>

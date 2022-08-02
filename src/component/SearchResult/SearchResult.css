@@ -3,7 +3,7 @@
 .results-page {
   display: flex;
   height: 100vh;
-  background-color: black
+  background-color: transparent
 }
 
 .top-picture {
@@ -48,7 +48,7 @@
   width: 40vw;
   max-width: 40vw;
   background-color: #05d2a2;
-  z-index: 4; 
+  z-index: 4;
 }
 
 .text {
@@ -64,11 +64,11 @@
 .lds-facebook {
   display: inline-block;
   position: absolute;
-  margin:-35px -35px 0 0;
-  height:70px;
-  width:70px;
-  right:50%;
-  top:50%; 
+  margin: -35px -35px 0 0;
+  height: 70px;
+  width: 70px;
+  right: 50%;
+  top: 50%;
   z-index: 2;
 }
 .lds-facebook div {
@@ -96,7 +96,8 @@
     top: 8px;
     height: 64px;
   }
-  50%, 100% {
+  50%,
+  100% {
     top: 24px;
     height: 32px;
   }
