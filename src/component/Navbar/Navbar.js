@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import LoginButton from "../Authentication/LoginButton";
 import LogoutButton from "../Authentication/LogoutButton";
 
-const Navbar = ({ isLoggedIn }) => {
-  console.log(isLoggedIn);
+const Navbar = ({ user, isAuthenticated, isLoading }) => {
+  console.log(isAuthenticated);
   return (
     <nav className="nav-container" aria-label="navbar">
       <div className="nav-appname">
@@ -33,10 +33,9 @@ const Navbar = ({ isLoggedIn }) => {
           </Link>
         </li>
         <li className="nav-point">
-          <Link to="/Profile">
-            <LoginButton />
-          </Link>
-          <LogoutButton />
+          {!isAuthenticated && <LoginButton />}
+
+          {isAuthenticated && <LogoutButton />}
         </li>
       </ul>
     </nav>

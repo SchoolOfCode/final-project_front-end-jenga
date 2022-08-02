@@ -8,19 +8,22 @@ import Profile from "../ProfilePage/Profile.js";
 import { Amplify } from "aws-amplify";
 import awsExports from "../../aws-exports";
 import "@aws-amplify/ui-react/styles.css";
+import { useAuth0 } from "@auth0/auth0-react";
 
 Amplify.configure(awsExports);
 
-function App({ signOut, user }) {
+function App() {
   const [searchTerm, setSearchTerm] = useState("");
   const [coords, setCoords] = useState({});
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  console.log(isLoggedIn);
+  const { user, isAuthenticated, isLoading } = useAuth0();
 
   return (
     <Router>
-      <Navbar isLoggedIn={isLoggedIn} />
+      <Navbar
+        user={user}
+        isAuthenticated={isAuthenticated}
+        isLoading={isLoading}
+      />
       <Routes>
         <Route
           path="/"
@@ -40,10 +43,9 @@ function App({ signOut, user }) {
           path="/Profile"
           element={
             <Profile
-              signOut={signOut}
               user={user}
-              setIsLoggedIn={setIsLoggedIn}
-              isLoggedIn={isLoggedIn}
+              isAuthenticated={isAuthenticated}
+              isLoading={isLoading}
             />
           }
         />
