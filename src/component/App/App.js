@@ -2,16 +2,24 @@ import "./App.css";
 import Navbar from "../Navbar/Navbar.js";
 import LandingPage from "../LandingPage/LandingPage.js";
 import SearchResult from "../SearchResult/SearchResult.js";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Profile from "../ProfilePage/ProfilePage.js";
+
+import { useAuth0 } from "@auth0/auth0-react";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
   const [coords, setCoords] = useState({});
-  console.log(coords);
+  const { user, isAuthenticated, isLoading } = useAuth0();
+
   return (
     <Router>
-      <Navbar />
+      <Navbar
+        user={user}
+        isAuthenticated={isAuthenticated}
+        isLoading={isLoading}
+      />
       <Routes>
         <Route
           path="/"
@@ -27,6 +35,16 @@ function App() {
           path="/SearchResult"
           element={<SearchResult searchTerm={searchTerm} coords={coords} />}
         ></Route>
+        <Route
+          path="/Profile"
+          element={
+            <Profile
+              user={user}
+              isAuthenticated={isAuthenticated}
+              isLoading={isLoading}
+            />
+          }
+        />
       </Routes>
     </Router>
   );

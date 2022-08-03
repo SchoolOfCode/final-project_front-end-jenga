@@ -1,0 +1,33 @@
+{
+  "cognito": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-jenga1-cognito-80230-authRole",
+      "UnauthRoleArn": "arn:aws:iam::885529891148:role/amplify-jenga1-cognito-80230-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::885529891148:role/amplify-jenga1-cognito-80230-authRole",
+      "Region": "eu-west-1",
+      "DeploymentBucketName": "amplify-jenga1-cognito-80230-deployment",
+      "UnauthRoleName": "amplify-jenga1-cognito-80230-unauthRole",
+      "StackName": "amplify-jenga1-cognito-80230",
+      "StackId": "arn:aws:cloudformation:eu-west-1:885529891148:stack/amplify-jenga1-cognito-80230/75313b70-1239-11ed-9483-0603dc7ab8db",
+      "AmplifyAppId": "dfeo1ncjvzij3"
+    }
+  },
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-jenga1-dev-214020-authRole",
+      "UnauthRoleArn": "arn:aws:iam::885529891148:role/amplify-jenga1-dev-214020-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::885529891148:role/amplify-jenga1-dev-214020-authRole",
+      "Region": "eu-west-1",
+      "DeploymentBucketName": "amplify-jenga1-dev-214020-deployment",
+      "UnauthRoleName": "amplify-jenga1-dev-214020-unauthRole",
+      "StackName": "amplify-jenga1-dev-214020",
+      "StackId": "arn:aws:cloudformation:eu-west-1:885529891148:stack/amplify-jenga1-dev-214020/295b5eb0-11da-11ed-a181-062ea528d607",
+      "AmplifyAppId": "d3v2vnpi5p7pq"
+    },
+    "categories": {
+      "auth": {
+        "jenga18c042411": {}
+      }
+    }
+  }
+}

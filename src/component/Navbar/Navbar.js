@@ -1,6 +1,10 @@
 import "./Navbar.css";
-import svg from "../../images/air-balloon-icon.svg";
-const Navbar = () => {
+import { Link } from "react-router-dom";
+import LoginButton from "../Authentication/LoginButton";
+import LogoutButton from "../Authentication/LogoutButton";
+
+const Navbar = ({ user, isAuthenticated, isLoading }) => {
+  console.log(isAuthenticated);
   return (
     <nav className="nav-container" aria-label="navbar">
       <div className="nav-appname">
@@ -16,10 +20,9 @@ const Navbar = () => {
           </a>
         </li>
         <li className="nav-point">
-          <button className="nav-link log">LOG IN</button>
-        </li>
-        <li className="nav-point">
-          <button className="nav-link sign">SIGN UP</button>
+          {!isAuthenticated && <LoginButton />}
+
+          {isAuthenticated && <LogoutButton />}
         </li>
       </ul>
     </nav>
