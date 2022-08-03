@@ -5,12 +5,8 @@ import SearchResult from "../SearchResult/SearchResult.js";
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Profile from "../ProfilePage/Profile.js";
-import { Amplify } from "aws-amplify";
-import awsExports from "../../aws-exports";
-import "@aws-amplify/ui-react/styles.css";
-import { useAuth0 } from "@auth0/auth0-react";
 
-Amplify.configure(awsExports);
+import { useAuth0 } from "@auth0/auth0-react";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
