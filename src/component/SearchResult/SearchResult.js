@@ -21,7 +21,7 @@ const SearchResult = ({ searchTerm, coords }) => {
     setImageUrl(oneImage.urls.full);
 
     const govResponse = await fetch(
-      `https://cors-anywhere.herokuapp.com/https://www.gov.uk/api/content/foreign-travel-advice/${searchTermGov}`
+      `https://pacific-journey-78384.herokuapp.com/https://www.gov.uk/api/content/foreign-travel-advice/${searchTermGov}`
     );
     const govData = await govResponse.json();
     console.log(govData.details.summary);
