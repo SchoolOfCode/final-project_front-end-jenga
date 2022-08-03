@@ -2,6 +2,7 @@ import "./Navbar.css";
 import { Link } from "react-router-dom";
 import LoginButton from "../Authentication/LoginButton";
 import LogoutButton from "../Authentication/LogoutButton";
+import svg from "../../images/air-balloon-icon.svg";
 
 const Navbar = ({ user, isAuthenticated, isLoading }) => {
   console.log(isAuthenticated);
