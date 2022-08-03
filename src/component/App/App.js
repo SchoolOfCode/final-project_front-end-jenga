@@ -4,7 +4,7 @@ import LandingPage from "../LandingPage/LandingPage.js";
 import SearchResult from "../SearchResult/SearchResult.js";
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Profile from "../ProfilePage/Profile.js";
+import Profile from "../ProfilePage/ProfilePage.js";
 
 import { useAuth0 } from "@auth0/auth0-react";
 

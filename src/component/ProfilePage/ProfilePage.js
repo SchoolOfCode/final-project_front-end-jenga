@@ -1,6 +1,6 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import React from "react";
-import "./Profile.css";
+import "./ProfilePage.css";
 
 const Profile = ({ user, isAuthenticated, isLoading }) => {
   if (isLoading) {
