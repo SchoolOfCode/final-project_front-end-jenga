@@ -26,7 +26,11 @@ const Navbar = ({ user, isAuthenticated, isLoading }) => {
 
           {isAuthenticated && (
             <Link to="/Profile">
-              <img src={user.picture} alt={user.name} />
+              <img
+                className="profileImage"
+                src={user.picture}
+                alt={user.name}
+              />
             </Link>
           )}
         </li>

@@ -2,28 +2,20 @@
 
 .nav-container {
   display: flex;
-  justify-content: space-between;
-
-  margin-left: 1vw;
-  margin-right: 2vw;
-  /* margin-top: 15vw; */
-  text-align: center;
+  justify-content: flex-start;
+  align-items: center;
   position: absolute;
   z-index: 9999;
 }
+
 .home-buttons {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
-  margin-left: 25vw;
-  min-width: 15vw;
-  /* background-color: green; */
-  margin-right: -5vw;
 }
 
 .home {
   margin-right: -6vw;
-
   display: inline-block;
   outline: none;
   cursor: pointer;
@@ -37,7 +29,7 @@
   font-size: 16px;
   letter-spacing: 1px;
 }
-.home:hover:hover {
+.home:hover {
   transition: all 0.1s ease;
   box-shadow: 0 0 0 0 #fff, 0 0 0 3px #05d2a2;
 }
@@ -50,33 +42,10 @@
   font-family: "Dosis", sans-serif;
   font-size: 5.5vw;
   color: white;
-  margin-right: -20vw;
-  margin-left: 22vw;
+  /* margin-right: -20vw; */
+  /* margin-left: 22vw; */
   -webkit-text-stroke-width: 0.1vw;
   text-shadow: 3px 3px rgb(93, 91, 91);
-}
-
-.log {
-  margin-right: -7vw;
-
-  display: inline-block;
-  outline: none;
-  cursor: pointer;
-  font-weight: 600;
-  border-radius: 3px;
-  padding: 7px 18px;
-  border: 0;
-  letter-spacing: 1px;
-
-  color: rgb(16, 16, 16);
-  /* background: rgb(182, 179, 179); */
-  background: #05d2a2;
-  line-height: 1.15;
-  font-size: 16px;
-}
-.log:hover {
-  transition: all 0.1s ease;
-  box-shadow: 0 0 0 0 #fff, 0 0 0 3px #05d2a2;
 }
 
 .nav-link {
@@ -113,7 +82,7 @@
   height: 80px;
   margin-left: 10px;
   margin-top: 5px;
-  position: absolute;
+  /* position: absolute; */
   top: 10px;
   justify-content: center;
   /* background-color: purple; */
