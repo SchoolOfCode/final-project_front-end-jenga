@@ -8,7 +8,11 @@
   position: absolute;
   width: 100vw;
   z-index: 9999;
-  background:linear-gradient(180deg, rgba(235,245,238,0.3) 0%, rgba(235,245,238,0.025) 100%);;
+  background: linear-gradient(
+    180deg,
+    rgba(235, 245, 238, 0.3) 0%,
+    rgba(235, 245, 238, 0.025) 100%
+  );
 }
 
 .nav-buttons-container {
@@ -64,6 +68,7 @@
   background: #3c91e6;
   letter-spacing: 0.5px;
   margin: 0.25vw;
+  margin-right: 0.5vw;
 }
 .sign:hover {
   transition: all 0.1s ease;
@@ -72,24 +77,25 @@
 
 .balloon {
   position: absolute;
-  left:0; 
-  top:0; 
-  width:100%; 
-  height:100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .balloon-container {
-  position:relative;
-  width: 5vw;
-  height: 5vw;
+  position: relative;
+  width: 6vw;
+  height: 6vw;
   border-radius: 50%;
-  background-color: #fff;
-  border: solid black 0.2vw;
-  margin-left: 0.5vw;  
+  background-color: #3c91e6;
+  /* border: solid black 0.2vw; */
+  margin-left: 0.75vw;
+  margin-top: 1vh;
 }
 
 .logo {
-  width: 30vw
+  width: 30vw;
 }
 
 .profile-image-container {
@@ -101,25 +107,27 @@
   overflow: hidden;
 }
 .profile-image-container:after {
-  content:'\A';
-  position:absolute;
+  content: "\A";
+  position: absolute;
   cursor: pointer;
-  width:100%; height:100%;
-  top:0; left:0;
-  background:rgba(0,0,0,0.2);
-  opacity:0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 0;
   transition: all 0.5s;
   -webkit-transition: all 0.3s;
 }
 .profile-image-container:hover:after {
-  opacity:1;
+  opacity: 1;
 }
 
 .profile-image {
   position: absolute;
-  left:0; 
-  top:0; 
-  width:100%; 
-  height:100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
 }
