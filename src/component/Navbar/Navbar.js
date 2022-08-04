@@ -7,7 +7,7 @@ import svg from "../../images/air-balloon-icon.svg";
 const Navbar = ({ user, isAuthenticated, isLoading }) => {
   return (
     <nav className="nav-container" aria-label="navbar">
-      <div className="nav-appname">
+      <div className="logo">
         <div className="balloon-container">
           <a className="nav-link" href="/">
             <img className="balloon" src={svg} alt="SVG" />
@@ -16,8 +16,8 @@ const Navbar = ({ user, isAuthenticated, isLoading }) => {
       </div>
       <h1 className="title"> FINDERS KEEPERS</h1>
       <div className="nav-buttons-container">
-        <a href="/">
-          <button className="home-button">Home</button>
+        <a href="/" className="home-button">
+          Home
         </a>
 
         {!isAuthenticated && <LoginButton />}
@@ -25,15 +25,15 @@ const Navbar = ({ user, isAuthenticated, isLoading }) => {
         {isAuthenticated && <LogoutButton />}
 
         {isAuthenticated && (
-          <div className="profile-image-container">
-            <Link to="/Profile">
+          <Link to="/Profile">
+            <div className="profile-image-container">
               <img
                 className="profile-image"
                 src={user.picture}
                 alt={user.name}
               />
-            </Link>
-          </div>
+            </div>
+          </Link>
         )}
       </div>
     </nav>
@@ -41,21 +41,3 @@ const Navbar = ({ user, isAuthenticated, isLoading }) => {
 };
 
 export default Navbar;
-
-/* 
-user.image ? (
-            <Link to="/Profile">{user.image}</Link>
-          ) : (
-            <Link to="/Profile">PROFILE</Link>
-          )} 
-
-
-
-          { isNull
-          ? null
-          : ( isEmpty
-              ? <p>Sorry, the list is empty.</p>
-              : <div>{list.map(item => <ListItem item={item} />)}</div>
-            )
-      }
-*/

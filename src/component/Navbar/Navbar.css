@@ -2,17 +2,20 @@
 
 .nav-container {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
   position: absolute;
   width: 100vw;
   z-index: 9999;
+  background:linear-gradient(180deg, rgba(235,245,238,0.3) 0%, rgba(235,245,238,0.025) 100%);;
 }
 
 .nav-buttons-container {
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
   align-items: center;
+  width: 30vw;
 }
 
 .home-button {
@@ -20,11 +23,12 @@
   font-size: 1.25vw;
   font-weight: 600;
   border-radius: 10px;
-  padding: 7px 18px;
+  padding: 1vh 1vw;
   border: 0;
   color: #000021;
   background: #05d2a2;
   letter-spacing: 1px;
+  text-decoration: none;
 }
 .home-button:hover {
   transition: all 0.1s ease;
@@ -39,6 +43,8 @@
   margin: 0;
   -webkit-text-stroke-width: 0.1vw;
   text-shadow: 3px 3px rgb(93, 91, 91);
+  width: 40vw;
+  text-align: center;
 }
 
 .nav-link {
@@ -48,16 +54,16 @@
 }
 
 .sign {
-  background-color: #3c91e6;
-  letter-spacing: 1px;
   cursor: pointer;
   font-size: 1.25vw;
   font-weight: 600;
   border-radius: 10px;
-  padding: 7px 18px;
+  padding: 1vh 1vw;
   border: 0;
   color: hsl(240, 17%, 98%);
   background: #3c91e6;
+  letter-spacing: 0.5px;
+  margin: 0.25vw;
 }
 .sign:hover {
   transition: all 0.1s ease;
@@ -78,18 +84,36 @@
   height: 5vw;
   border-radius: 50%;
   background-color: #fff;
-  border: solid black 0.2vw;  
+  border: solid black 0.2vw;
+  margin-left: 0.5vw;  
+}
+
+.logo {
+  width: 30vw
 }
 
 .profile-image-container {
   position: relative;
-  width: 4vw;
-  height: 4vw;
+  width: 3.5vw;
+  height: 3.5vw;
   border-radius: 50%;
-  border: solid black 0.2vw; 
+  margin-right: 0.5vw;
   overflow: hidden;
 }
-
+.profile-image-container:after {
+  content:'\A';
+  position:absolute;
+  cursor: pointer;
+  width:100%; height:100%;
+  top:0; left:0;
+  background:rgba(0,0,0,0.2);
+  opacity:0;
+  transition: all 0.5s;
+  -webkit-transition: all 0.3s;
+}
+.profile-image-container:hover:after {
+  opacity:1;
+}
 
 .profile-image {
   position: absolute;
@@ -97,5 +121,5 @@
   top:0; 
   width:100%; 
   height:100%;
-  object-fit: fill;
+  border-radius: 50%;
 }
