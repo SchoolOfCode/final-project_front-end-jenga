@@ -5,7 +5,6 @@ import LogoutButton from "../Authentication/LogoutButton";
 import svg from "../../images/air-balloon-icon.svg";
 
 const Navbar = ({ user, isAuthenticated, isLoading }) => {
-  console.log(isAuthenticated);
   return (
     <nav className="nav-container" aria-label="navbar">
       <div className="nav-appname">
@@ -24,6 +23,12 @@ const Navbar = ({ user, isAuthenticated, isLoading }) => {
           {!isAuthenticated && <LoginButton />}
 
           {isAuthenticated && <LogoutButton />}
+
+          {isAuthenticated && (
+            <Link to="/Profile">
+              <img src={user.picture} alt={user.name} />
+            </Link>
+          )}
         </li>
       </ul>
     </nav>
@@ -31,3 +36,21 @@ const Navbar = ({ user, isAuthenticated, isLoading }) => {
 };
 
 export default Navbar;
+
+/* 
+user.image ? (
+            <Link to="/Profile">{user.image}</Link>
+          ) : (
+            <Link to="/Profile">PROFILE</Link>
+          )} 
+
+
+
+          { isNull
+          ? null
+          : ( isEmpty
+              ? <p>Sorry, the list is empty.</p>
+              : <div>{list.map(item => <ListItem item={item} />)}</div>
+            )
+      }
+*/
