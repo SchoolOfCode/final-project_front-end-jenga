@@ -2,48 +2,41 @@
 
 .nav-container {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   position: absolute;
+  width: 100vw;
   z-index: 9999;
 }
 
-.home-buttons {
+.nav-buttons-container {
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
 
-.home {
-  margin-right: -6vw;
-  display: inline-block;
-  outline: none;
+.home-button {
   cursor: pointer;
+  font-size: 1.25vw;
   font-weight: 600;
-  border-radius: 3px;
+  border-radius: 10px;
   padding: 7px 18px;
   border: 0;
   color: #000021;
   background: #05d2a2;
-  line-height: 1.15;
-  font-size: 16px;
   letter-spacing: 1px;
 }
-.home:hover {
+.home-button:hover {
   transition: all 0.1s ease;
   box-shadow: 0 0 0 0 #fff, 0 0 0 3px #05d2a2;
 }
-.nav-point {
-  list-style: none;
-  /* margin-left: 2vw; */
-  min-width: 8vw;
-}
+
 .title {
   font-family: "Dosis", sans-serif;
-  font-size: 5.5vw;
+  font-size: 5vw;
   color: white;
-  /* margin-right: -20vw; */
-  /* margin-left: 22vw; */
+  font-weight: 400;
+  margin: 0;
   -webkit-text-stroke-width: 0.1vw;
   text-shadow: 3px 3px rgb(93, 91, 91);
 }
@@ -56,21 +49,15 @@
 
 .sign {
   background-color: #3c91e6;
-  margin-left: -3vw;
   letter-spacing: 1px;
-  margin-right: -5vw;
-
-  display: inline-block;
-  outline: none;
   cursor: pointer;
+  font-size: 1.25vw;
   font-weight: 600;
-  border-radius: 3px;
+  border-radius: 10px;
   padding: 7px 18px;
   border: 0;
   color: hsl(240, 17%, 98%);
   background: #3c91e6;
-  line-height: 1.15;
-  font-size: 16px;
 }
 .sign:hover {
   transition: all 0.1s ease;
@@ -78,17 +65,37 @@
 }
 
 .balloon {
-  width: 80px;
-  height: 80px;
-  margin-left: 10px;
-  margin-top: 5px;
-  /* position: absolute; */
-  top: 10px;
-  justify-content: center;
-  /* background-color: purple; */
-  background-color: #fff;
+  position: absolute;
+  left:0; 
+  top:0; 
+  width:100%; 
+  height:100%;
+}
+
+.balloon-container {
+  position:relative;
+  width: 5vw;
+  height: 5vw;
   border-radius: 50%;
-  padding: 8px;
-  border: solid black;
-  border-width: 6px;
+  background-color: #fff;
+  border: solid black 0.2vw;  
+}
+
+.profile-image-container {
+  position: relative;
+  width: 4vw;
+  height: 4vw;
+  border-radius: 50%;
+  border: solid black 0.2vw; 
+  overflow: hidden;
+}
+
+
+.profile-image {
+  position: absolute;
+  left:0; 
+  top:0; 
+  width:100%; 
+  height:100%;
+  object-fit: fill;
 }
