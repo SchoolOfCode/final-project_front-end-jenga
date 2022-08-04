@@ -46,6 +46,15 @@ const Profile = ({ user, isAuthenticated, isLoading }) => {
       console.log(response);
     });
   }
+  //Delete a fav place by locationId
+  async function deleteLocation(locationId) {
+    Axios.delete(
+      `https://pacific-journey-78384.herokuapp.com/https://8a50g75era.execute-api.eu-west-2.amazonaws.com/prod/location/${locationId}`,
+     
+    ).then((response) => {
+      console.log(response);
+    });
+  }
 
   return (
     isAuthenticated && (
@@ -58,6 +67,7 @@ const Profile = ({ user, isAuthenticated, isLoading }) => {
           press me for filtered result
         </button>
         <button onClick={putLocationByUser}>Save a new location</button>
+        <button onClick={() => deleteLocation("24117")}>Delete your favourite location</button>
       </div>
     )
   );
