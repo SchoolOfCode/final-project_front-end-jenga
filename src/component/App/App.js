@@ -33,7 +33,9 @@ function App() {
         ></Route>
         <Route
           path="/SearchResult"
-          element={<SearchResult searchTerm={searchTerm} coords={coords} user={user}/>}
+          element={
+            <SearchResult searchTerm={searchTerm} coords={coords} user={user} />
+          }
         ></Route>
         <Route
           path="/Profile"
@@ -42,6 +44,7 @@ function App() {
               user={user}
               isAuthenticated={isAuthenticated}
               isLoading={isLoading}
+              coords={coords}
             />
           }
         />

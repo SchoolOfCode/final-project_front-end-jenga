@@ -2,13 +2,20 @@ import { useAuth0 } from "@auth0/auth0-react";
 import React from "react";
 import "./ProfilePage.css";
 import Axios from "axios";
+import { useEffect } from "react";
 
-const Profile = ({ user, isAuthenticated, isLoading }) => {
+const Profile = ({ user, isAuthenticated, isLoading, coords }) => {
+  useEffect(() => {
+    // console.log(user.sub);
+    getLocationByUser(userIdGenerator);
+  }, []);
+
   if (isLoading) {
     return <div>Loading ...</div>;
   }
   console.log(user);
-
+  const userIdGenerator = user.sub.split("|")[1];
+  console.log(userIdGenerator);
   //Get everything from the database
   async function getLocation() {
     console.log("Inside Axios");
@@ -22,7 +29,7 @@ const Profile = ({ user, isAuthenticated, isLoading }) => {
 
   //Get everything from the database by user
   async function getLocationByUser(userId) {
-    console.log("Inside Axios");
+    console.log(userId);
     Axios.get(
       `https://pacific-journey-78384.herokuapp.com/https://8a50g75era.execute-api.eu-west-2.amazonaws.com/prod/location/${userId}`
     ).then((response) => {
@@ -49,8 +56,7 @@ const Profile = ({ user, isAuthenticated, isLoading }) => {
   //Delete a fav place by locationId
   async function deleteLocation(locationId) {
     Axios.delete(
-      `https://pacific-journey-78384.herokuapp.com/https://8a50g75era.execute-api.eu-west-2.amazonaws.com/prod/location/${locationId}`,
-     
+      `https://pacific-journey-78384.herokuapp.com/https://8a50g75era.execute-api.eu-west-2.amazonaws.com/prod/location/${locationId}`
     ).then((response) => {
       console.log(response);
     });
@@ -67,7 +73,9 @@ const Profile = ({ user, isAuthenticated, isLoading }) => {
           press me for filtered result
         </button>
         <button onClick={putLocationByUser}>Save a new location</button>
-        <button onClick={() => deleteLocation("24117")}>Delete your favourite location</button>
+        <button onClick={() => deleteLocation("24117")}>
+          Delete your favourite location
+        </button>
       </div>
     )
   );
