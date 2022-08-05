@@ -43,26 +43,25 @@ const Profile = ({ user, isAuthenticated, isLoading }) => {
         <img src={user.picture} alt={user.name} />
         <h2>{user.name}</h2>
         <p>{user.email}</p>
-        <button onClick={getLocation}>press me for everything</button>
-        <button onClick={() => getLocationByUser(user)}>
+        {/*<button onClick={getLocation}>press me for everything</button>
+         <button onClick={() => getLocationByUser(user)}>
           press me for filtered result
-        </button>
+        </button> */}
         <button onClick={() => deleteLocation(toDelete)}>
           Delete your favourite location
         </button>
         <input type="text" onChange={handleChange} />
         return{" "}
-        <Carousel itemsToShow={2}>
+        <Carousel itemsToShow={4}>
           {savedLocations == 0
             ? null
             : savedLocations.data.map((e) => (
                 <div className="Carousel">
-                  <h1>{e.locationName}</h1>
-                  <img
-                    src={e.locationImage}
-                    alt="none"
-                    style={{ height: "100px", width: "100px" }}
-                  ></img>
+                  <h1>
+                    {e.locationName.charAt(0).toUpperCase() +
+                      e.locationName.slice(1)}
+                  </h1>
+                  <img className="image" src={e.locationImage} alt="none"></img>
                 </div>
               ))}
         </Carousel>
