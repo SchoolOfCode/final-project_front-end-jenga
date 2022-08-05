@@ -4,13 +4,14 @@ import { useNavigate } from "react-router-dom";
 import "./landingPage.css";
 import { useEffect } from "react";
 
-function LandingPage({ searchTerm, setSearchTerm, setCoords }) {
+function LandingPage({ searchTerm, setSearchTerm, setCoords, setNoResults }) {
   let navigate = useNavigate();
 
   useEffect(() => {
     setSearchTerm("");
     setCoords("");
-  }, [setSearchTerm, setCoords]);
+    setNoResults("");
+  }, [setSearchTerm, setCoords, setNoResults]);
 
   return (
     <div className="landing-page-edit">
@@ -21,6 +22,7 @@ function LandingPage({ searchTerm, setSearchTerm, setCoords }) {
           setSearchTerm={setSearchTerm}
           navigate={navigate}
           setCoords={setCoords}
+          setNoResults={setNoResults}
         />
       </div>
     </div>

@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis&display=swap");
+
+.error-page{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(5,210,162,0.6) 100%);
+}
+
+.error-page > h1 {
+    font-family: "Dosis", sans-serif;
+    font-size: 10vw; 
+    color: #3c91e6;
+    margin: 0;
+    margin-bottom: 2vh;
+}
+
+.error-page > h3 {
+    font-family: "Dosis", sans-serif;
+    font-size: 3vw;
+    margin: 0;
+}
+
+.error-page > p {
+    font-family: "Dosis", sans-serif;
+    text-decoration: underline;
+}
+
