@@ -18,12 +18,15 @@ export async function getLocation() {
 }
 
 //Get everything from the database by user
-export async function getLocationByUser(userId) {
+export function getLocationByUser(user) {
+  const userId = getUserId(user.sub);
   //console.log(userId);
   Axios.get(
     `https://pacific-journey-78384.herokuapp.com/https://8a50g75era.execute-api.eu-west-2.amazonaws.com/prod/location/${userId}`
   ).then((response) => {
-    console.log(response.data);
+    const body = response.data;
+    console.log(body);
+    return body;
   });
 }
 

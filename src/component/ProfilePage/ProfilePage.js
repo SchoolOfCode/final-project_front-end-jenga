@@ -5,21 +5,31 @@ import {
   getLocation,
   getLocationByUser,
   deleteLocation,
-  getUserId,
 } from "../../models/models.js";
 
 const Profile = ({ user, isAuthenticated, isLoading }) => {
   const [toDelete, setToDelete] = useState("");
+  const [savedLocations, setSavedLocations] = useState([]);
 
   useEffect(() => {
     if (user) {
-      getLocationByUser(getUserId(user.sub));
+      getSavedLocation();
     }
   }, [user]);
 
   function handleChange(event) {
     setToDelete(event.target.value);
   }
+
+  async function getSavedLocation() {
+    let savedLocation = await getLocationByUser(user);
+    console.log("Function", savedLocation);
+
+    //setSavedLocations(savedLocation);
+    // console.log("Function", savedLocation);
+  }
+
+  console.log("Main", savedLocations);
 
   if (isLoading) {
     return <div>Loading ...</div>;
@@ -32,7 +42,7 @@ const Profile = ({ user, isAuthenticated, isLoading }) => {
         <h2>{user.name}</h2>
         <p>{user.email}</p>
         <button onClick={getLocation}>press me for everything</button>
-        <button onClick={() => getLocationByUser(getUserId(user.sub))}>
+        <button onClick={() => getLocationByUser(user)}>
           press me for filtered result
         </button>
 
