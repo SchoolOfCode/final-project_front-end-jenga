@@ -25,10 +25,10 @@ const Profile = ({ user, isAuthenticated, isLoading }) => {
 
   async function getSavedLocation() {
     let savedLocation = await getLocationByUser(user);
-    console.log("Function", savedLocation);
+    // console.log("Function", savedLocation);
 
     setSavedLocations(savedLocation);
-    console.log("Function", savedLocation);
+    //console.log("Function", savedLocation);
   }
 
   // console.log("Main", savedLocations);
@@ -52,7 +52,7 @@ const Profile = ({ user, isAuthenticated, isLoading }) => {
         </button>
         <input type="text" onChange={handleChange} />
         return{" "}
-        <Carousel>
+        <Carousel itemsToShow={2}>
           {savedLocations == 0
             ? null
             : savedLocations.data.map((e) => (
