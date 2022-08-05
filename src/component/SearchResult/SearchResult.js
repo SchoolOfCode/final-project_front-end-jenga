@@ -39,17 +39,19 @@ const SearchResult = ({ searchTerm, coords, user, isAuthenticated }) => {
           <div></div>
           <div></div>
         </div>
-        <p className="country-name">{searchTerm.toUpperCase()}</p>
-        {isAuthenticated && (
-          <button
-            className="save-button"
-            onClick={() =>
-              putLocationByUser(user, coords, searchTerm, imageUrl)
-            }
-          >
-            Save
-          </button>
-        )}
+        <div className="title-and-save">
+          <p className="country-name">{searchTerm.toUpperCase()}</p>
+          {isAuthenticated && (
+            <button
+              className="save-button"
+              onClick={() =>
+                putLocationByUser(user, coords, searchTerm, imageUrl)
+              }
+            >
+              Save
+            </button>
+          )}
+        </div>
       </div>
       <div className="bottom-results">
         <div

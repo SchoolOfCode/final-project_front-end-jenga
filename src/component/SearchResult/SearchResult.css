@@ -21,17 +21,41 @@
   z-index: 3;
 }
 
-.country-name {
+
+.title-and-save {
   position: absolute;
+  margin-top: 20vh;
+  margin-left: 5vw;
+  z-index: 4;
+}
+
+
+.country-name {
+  margin: 0;
   font-family: "Dosis", sans-serif;
   font-size: 7.25vw;
   font-weight: 800;
-  margin-top: 20vh;
-  margin-left: 5vw;
   color: white;
   text-shadow: -1px 0 #3c91e6, 0 1px #3c91e6, 1px 0 #3c91e6, 0 -1px #3c91e6;
   letter-spacing: 0.2vw;
-  z-index: 4;
+}
+
+.save-button {
+  cursor: pointer;
+  font-size: 0.8vw;
+  font-weight: 600;
+  border-radius: 7px;
+  padding: 0.7vh 0.7vw;
+  border: 0;
+  color: #000021;
+  background: #05d2a2;
+  letter-spacing: 1px;
+  text-decoration: none;
+  margin-left: 0.5vw;
+}
+.save-button:hover {
+  transition: all 0.1s ease;
+  box-shadow: 0 0 0 0 #fff, 0 0 0 3px #05d2a2;
 }
 
 .bottom-results {
