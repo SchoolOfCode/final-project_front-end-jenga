@@ -42,6 +42,7 @@ const SearchResult = ({ searchTerm, coords, user, isAuthenticated }) => {
         <p className="country-name">{searchTerm.toUpperCase()}</p>
         {isAuthenticated && (
           <button
+            className="save-button"
             onClick={() =>
               putLocationByUser(user, coords, searchTerm, imageUrl)
             }

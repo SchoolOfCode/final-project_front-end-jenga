@@ -24,13 +24,13 @@
 .country-name {
   position: absolute;
   font-family: "Dosis", sans-serif;
-  font-size: 5rem;
+  font-size: 7.25vw;
   font-weight: 800;
   margin-top: 20vh;
   margin-left: 5vw;
   color: white;
   text-shadow: -1px 0 #3c91e6, 0 1px #3c91e6, 1px 0 #3c91e6, 0 -1px #3c91e6;
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.2vw;
   z-index: 4;
 }
 
