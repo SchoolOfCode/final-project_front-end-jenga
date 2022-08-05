@@ -2,9 +2,16 @@ import SearchBar from "../../component/SearchBar/searchBar.js";
 
 import { useNavigate } from "react-router-dom";
 import "./landingPage.css";
+import { useEffect } from "react";
 
 function LandingPage({ searchTerm, setSearchTerm, setCoords }) {
   let navigate = useNavigate();
+
+  useEffect(() => {
+    setSearchTerm("");
+    setCoords("");
+  }, [setSearchTerm, setCoords]);
+
   return (
     <div className="landing-page-edit">
       <div className="search-tools">
