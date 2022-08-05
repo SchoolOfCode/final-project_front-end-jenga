@@ -1,5 +1,7 @@
 import React from "react";
 import "./ProfilePage.css";
+import Item from "./item.js";
+import Carousel from "react-elastic-carousel";
 import { useState, useEffect } from "react";
 import {
   getLocation,
@@ -29,7 +31,7 @@ const Profile = ({ user, isAuthenticated, isLoading }) => {
     console.log("Function", savedLocation);
   }
 
-  console.log("Main", savedLocations);
+  // console.log("Main", savedLocations);
 
   if (isLoading) {
     return <div>Loading ...</div>;
@@ -50,12 +52,11 @@ const Profile = ({ user, isAuthenticated, isLoading }) => {
         </button>
         <input type="text" onChange={handleChange} />
         return{" "}
-        <div>
+        <Carousel>
           {savedLocations == 0
             ? null
             : savedLocations.data.map((e) => (
-                <div>
-                  <h1>{e.locationId}</h1>
+                <div className="Carousel">
                   <h1>{e.locationName}</h1>
                   <img
                     src={e.locationImage}
@@ -64,7 +65,7 @@ const Profile = ({ user, isAuthenticated, isLoading }) => {
                   ></img>
                 </div>
               ))}
-        </div>
+        </Carousel>
       </div>
     )
   );
