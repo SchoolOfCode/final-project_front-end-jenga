@@ -21,13 +21,9 @@ export async function getLocation() {
 export function getLocationByUser(user) {
   const userId = getUserId(user.sub);
   //console.log(userId);
-  Axios.get(
+  return Axios.get(
     `https://pacific-journey-78384.herokuapp.com/https://8a50g75era.execute-api.eu-west-2.amazonaws.com/prod/location/${userId}`
-  ).then((response) => {
-    const body = response.data;
-    console.log(body);
-    return body;
-  });
+  );
 }
 
 //Delete a fav place by locationId
