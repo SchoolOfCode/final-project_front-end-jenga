@@ -2,8 +2,15 @@ import { useEffect, useState } from "react";
 import "./SearchResult.css";
 import MapContainer from "../Map/Map.js";
 import { putLocationByUser } from "../../models/models";
+import ErrorPage from "../ErrorPage/errorPage";
 
-const SearchResult = ({ searchTerm, coords, user }) => {
+const SearchResult = ({
+  searchTerm,
+  coords,
+  user,
+  isAuthenticated,
+  noResults,
+}) => {
   const [imageUrl, setImageUrl] = useState("");
   const [govAPI, setGovAPI] = useState("");
   const searchTermGov = searchTerm.toLowerCase();
@@ -14,7 +21,7 @@ const SearchResult = ({ searchTerm, coords, user }) => {
     getLocationImage();
   }, []);
 
-  console.log(coords.lat);
+  //console.log(coords.lat);
   async function getLocationImage() {
     let randomNumber = Math.floor(Math.random() * 5);
     const response = await fetch(requestUrl);
@@ -31,31 +38,44 @@ const SearchResult = ({ searchTerm, coords, user }) => {
   }
   //console.log("from results page", user.sub);
   return (
-    <div className="results-page">
-      <div className="top-picture">
-        <img src={imageUrl} alt="Location" className="location-image"></img>
-        <div className="lds-facebook">
-          <div></div>
-          <div></div>
-          <div></div>
+    <>
+      {noResults === "ZERO_RESULTS" ? (
+        <ErrorPage />
+      ) : (
+        <div className="results-page">
+          <div className="top-picture">
+            <img src={imageUrl} alt="Location" className="location-image"></img>
+            <div className="lds-facebook">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div className="title-and-save">
+              <p className="country-name">{searchTerm.toUpperCase()}</p>
+              {isAuthenticated && (
+                <button
+                  className="save-button"
+                  onClick={() =>
+                    putLocationByUser(user, coords, searchTerm, imageUrl)
+                  }
+                >
+                  Save
+                </button>
+              )}
+            </div>
+          </div>
+          <div className="bottom-results">
+            <div
+              className="text"
+              dangerouslySetInnerHTML={{ __html: govAPI }}
+            ></div>
+            <div className="map">
+              <MapContainer coords={coords} />
+            </div>
+          </div>
         </div>
-        <p className="country-name">{searchTerm.toUpperCase()}</p>
-        <button
-          onClick={() => putLocationByUser(user, coords, searchTerm, imageUrl)}
-        >
-          Save
-        </button>
-      </div>
-      <div className="bottom-results">
-        <div
-          className="text"
-          dangerouslySetInnerHTML={{ __html: govAPI }}
-        ></div>
-        <div className="map">
-          <MapContainer coords={coords} />
-        </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 };
 

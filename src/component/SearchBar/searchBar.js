@@ -12,14 +12,15 @@ export default function SearchBar({
   searchTerm,
   navigate,
   setCoords,
+  setNoResults,
 }) {
   const [address, setAddress] = useState("");
 
   const handleChange = (addressInput) => {
     setAddress(addressInput);
-    console.log(address);
+    //console.log(address);
     setSearchTerm(addressInput);
-    console.log("this works", searchTerm);
+    //console.log("this works", searchTerm);
   };
 
   const handleSelect = (addressInput) => {
@@ -28,9 +29,15 @@ export default function SearchBar({
 
     geocodeByAddress(addressInput)
       .then((results) => getLatLng(results[0])) //not using this function only Console logging
-      .then((latLng) => setCoords(latLng))
+      .then((latLng) => {
+        setCoords(latLng);
+        setNoResults(latLng);
+      })
       // .then(()=> console.log)
-      .catch((error) => console.error("Error", error));
+      .catch((error) => {
+        //console.error("Error", error);
+        setNoResults(error);
+      });
   };
 
   const searchOptions = {

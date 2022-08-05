@@ -9,16 +9,16 @@ const Navbar = ({ user, isAuthenticated, isLoading }) => {
     <nav className="nav-container" aria-label="navbar">
       <div className="logo">
         <div className="balloon-container">
-          <a className="nav-link" href="/">
+          <Link to="/" className="nav-link" href="/">
             <img className="balloon" src={svg} alt="SVG" />
-          </a>
+          </Link>
         </div>
       </div>
       <h1 className="title"> FINDERS KEEPERS</h1>
       <div className="nav-buttons-container">
-        <a href="/" className="home-button">
+        <Link to="/" className="home-button">
           Home
-        </a>
+        </Link>
 
         {!isAuthenticated && <LoginButton />}
 
