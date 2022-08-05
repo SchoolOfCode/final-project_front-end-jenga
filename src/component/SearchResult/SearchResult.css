@@ -68,7 +68,7 @@
 .map {
   display: flex;
   justify-content: center;
-  border-radius: 15px 15px 0px 0px;
+  border-radius: 0px 15px 0px 0px;
   width: 40vw;
   max-width: 40vw;
   background-color: #05d2a2;
@@ -76,7 +76,7 @@
 }
 
 .text {
-  border-radius: 15px 15px 0px 0px;
+  border-radius: 15px 0px 0px 0px;
   width: 60vw;
   overflow: scroll;
   background-color: whitesmoke;
