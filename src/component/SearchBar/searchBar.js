@@ -7,7 +7,12 @@ import PlacesAutocomplete, {
 
 const google = window.google;
 
-export default function SearchBar({ setSearchTerm, searchTerm, navigate, setCoords }) {
+export default function SearchBar({
+  setSearchTerm,
+  searchTerm,
+  navigate,
+  setCoords,
+}) {
   const [address, setAddress] = useState("");
 
   const handleChange = (addressInput) => {
@@ -24,7 +29,7 @@ export default function SearchBar({ setSearchTerm, searchTerm, navigate, setCoor
     geocodeByAddress(addressInput)
       .then((results) => getLatLng(results[0])) //not using this function only Console logging
       .then((latLng) => setCoords(latLng))
-      // .then(()=> console.log) 
+      // .then(()=> console.log)
       .catch((error) => console.error("Error", error));
   };
 

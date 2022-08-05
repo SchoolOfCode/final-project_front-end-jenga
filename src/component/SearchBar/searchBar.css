@@ -5,12 +5,11 @@
   justify-content: center;
   height: 3.5vw;
   width: 60vw;
-
-  border-radius: 1vh;
+  border-radius: 7px;
   border-color: transparent;
   font-size: 2vw;
   font-family: "Dosis", sans-serif;
-  margin-top: 20vw;
+  /* margin-top: 20vw; */
   /* margin-right: 30vw; */
 }
 

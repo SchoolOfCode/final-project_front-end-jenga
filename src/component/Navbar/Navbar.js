@@ -5,27 +5,37 @@ import LogoutButton from "../Authentication/LogoutButton";
 import svg from "../../images/air-balloon-icon.svg";
 
 const Navbar = ({ user, isAuthenticated, isLoading }) => {
-  console.log(isAuthenticated);
   return (
     <nav className="nav-container" aria-label="navbar">
-      <div className="nav-appname">
-        <a className="nav-link" href="/">
-          <img className="balloon" src={svg} alt="SVG" />
-        </a>
-      </div>
-      <div className="title"> FINDERS KEEPERS</div>
-      <ul className="home-buttons">
-        <li className="nav-point">
-          <a href="/">
-            <button className="nav-link home ">HOME</button>
+      <div className="logo">
+        <div className="balloon-container">
+          <a className="nav-link" href="/">
+            <img className="balloon" src={svg} alt="SVG" />
           </a>
-        </li>
-        <li className="nav-point">
-          {!isAuthenticated && <LoginButton />}
+        </div>
+      </div>
+      <h1 className="title"> FINDERS KEEPERS</h1>
+      <div className="nav-buttons-container">
+        <a href="/" className="home-button">
+          Home
+        </a>
 
-          {isAuthenticated && <LogoutButton />}
-        </li>
-      </ul>
+        {!isAuthenticated && <LoginButton />}
+
+        {isAuthenticated && <LogoutButton />}
+
+        {isAuthenticated && (
+          <Link to="/Profile">
+            <div className="profile-image-container">
+              <img
+                className="profile-image"
+                src={user.picture}
+                alt={user.name}
+              />
+            </div>
+          </Link>
+        )}
+      </div>
     </nav>
   );
 };
