@@ -14,7 +14,7 @@ const SearchResult = ({ searchTerm, coords, user, isAuthenticated }) => {
     getLocationImage();
   }, []);
 
-  console.log(coords.lat);
+  //console.log(coords.lat);
   async function getLocationImage() {
     let randomNumber = Math.floor(Math.random() * 5);
     const response = await fetch(requestUrl);

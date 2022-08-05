@@ -17,9 +17,9 @@ export default function SearchBar({
 
   const handleChange = (addressInput) => {
     setAddress(addressInput);
-    console.log(address);
+    //console.log(address);
     setSearchTerm(addressInput);
-    console.log("this works", searchTerm);
+    //console.log("this works", searchTerm);
   };
 
   const handleSelect = (addressInput) => {

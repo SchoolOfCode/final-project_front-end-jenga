@@ -2,7 +2,7 @@ import "./App.css";
 import Navbar from "../Navbar/Navbar.js";
 import LandingPage from "../LandingPage/LandingPage.js";
 import SearchResult from "../SearchResult/SearchResult.js";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Profile from "../ProfilePage/ProfilePage.js";
 
