@@ -34,7 +34,12 @@ function App() {
         <Route
           path="/SearchResult"
           element={
-            <SearchResult searchTerm={searchTerm} coords={coords} user={user} />
+            <SearchResult
+              searchTerm={searchTerm}
+              coords={coords}
+              user={user}
+              isAuthenticated={isAuthenticated}
+            />
           }
         ></Route>
         <Route

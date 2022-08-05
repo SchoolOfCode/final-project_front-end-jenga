@@ -3,7 +3,7 @@ import "./SearchResult.css";
 import MapContainer from "../Map/Map.js";
 import { putLocationByUser } from "../../models/models";
 
-const SearchResult = ({ searchTerm, coords, user }) => {
+const SearchResult = ({ searchTerm, coords, user, isAuthenticated }) => {
   const [imageUrl, setImageUrl] = useState("");
   const [govAPI, setGovAPI] = useState("");
   const searchTermGov = searchTerm.toLowerCase();
@@ -40,11 +40,15 @@ const SearchResult = ({ searchTerm, coords, user }) => {
           <div></div>
         </div>
         <p className="country-name">{searchTerm.toUpperCase()}</p>
-        <button
-          onClick={() => putLocationByUser(user, coords, searchTerm, imageUrl)}
-        >
-          Save
-        </button>
+        {isAuthenticated && (
+          <button
+            onClick={() =>
+              putLocationByUser(user, coords, searchTerm, imageUrl)
+            }
+          >
+            Save
+          </button>
+        )}
       </div>
       <div className="bottom-results">
         <div
