@@ -1,5 +1,6 @@
 import React from "react";
 import "./ProfilePage.css";
+import Axios from "axios";
 import Item from "./item.js";
 import Carousel from "react-elastic-carousel";
 import { useState, useEffect } from "react";
@@ -10,7 +11,7 @@ import {
 } from "../../models/models.js";
 
 const Profile = ({ user, isAuthenticated, isLoading }) => {
-  const [toDelete, setToDelete] = useState("");
+  // const [toDelete, setToDelete] = useState("");
   const [savedLocations, setSavedLocations] = useState([]);
 
   useEffect(() => {
@@ -18,10 +19,6 @@ const Profile = ({ user, isAuthenticated, isLoading }) => {
       getSavedLocation();
     }
   }, [user]);
-
-  function handleChange(event) {
-    setToDelete(event.target.value);
-  }
 
   async function getSavedLocation() {
     let savedLocation = await getLocationByUser(user);
@@ -31,7 +28,17 @@ const Profile = ({ user, isAuthenticated, isLoading }) => {
     //console.log("Function", savedLocation);
   }
 
-  // console.log("Main", savedLocations);
+  async function deleteLocation(locationId) {
+    Axios.delete(
+      `https://pacific-journey-78384.herokuapp.com/https://8a50g75era.execute-api.eu-west-2.amazonaws.com/prod/location/${locationId}`
+    ).then((response) => {
+      console.log(response);
+    });
+    // setSavedLocations([
+    //   ...savedLocations.filter((e) => e.locationId !== locationId),
+    // ]);
+  }
+  console.log("Main", savedLocations);
 
   if (isLoading) {
     return <div>Loading ...</div>;
@@ -42,19 +49,18 @@ const Profile = ({ user, isAuthenticated, isLoading }) => {
       <div>
         <img src={user.picture} alt={user.name} />
         <h2>{user.name}</h2>
-        <p>{user.email}</p>
         {/*<button onClick={getLocation}>press me for everything</button>
          <button onClick={() => getLocationByUser(user)}>
           press me for filtered result
         </button> */}
-        <button onClick={() => deleteLocation(toDelete)}>
+        {/* <button onClick={() => deleteLocation(toDelete)}>
           Delete your favourite location
-        </button>
-        <input type="text" onChange={handleChange} />
-        return{" "}
+        </button> */}
+        {/* <input type="text" onChange={handleChange} /> */}
+
         <Carousel itemsToShow={4}>
           {savedLocations == 0
-            ? null
+            ? []
             : savedLocations.data.map((e) => (
                 <div className="Carousel">
                   <h1>
@@ -62,6 +68,12 @@ const Profile = ({ user, isAuthenticated, isLoading }) => {
                       e.locationName.slice(1)}
                   </h1>
                   <img className="image" src={e.locationImage} alt="none"></img>
+                  <button
+                    className="sign"
+                    onClick={() => deleteLocation(e.locationId)}
+                  >
+                    remove
+                  </button>
                 </div>
               ))}
         </Carousel>

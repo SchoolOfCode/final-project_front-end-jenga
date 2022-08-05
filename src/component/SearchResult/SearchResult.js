@@ -26,8 +26,12 @@ const SearchResult = ({ searchTerm, coords, user }) => {
       `https://pacific-journey-78384.herokuapp.com/https://www.gov.uk/api/content/foreign-travel-advice/${searchTermGov}`
     );
     const govData = await govResponse.json();
+    const desiredHtml = govData.details.summary.replaceAll(
+      'href="/',
+      'href="https://www.gov.uk/'
+    );
     //console.log(govData.details.summary);
-    setGovAPI(govData.details.summary);
+    setGovAPI(desiredHtml);
   }
   //console.log("from results page", user.sub);
   return (
@@ -47,10 +51,7 @@ const SearchResult = ({ searchTerm, coords, user }) => {
         </button>
       </div>
       <div className="bottom-results">
-        <div
-          className="text"
-          dangerouslySetInnerHTML={{ __html: govAPI }}
-        ></div>
+        <div className="text" desiredhtml={{ __html: govAPI }}></div>
         <div className="map">
           <MapContainer coords={coords} />
         </div>
