@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import "./SearchResult.css";
 import MapContainer from "../Map/Map.js";
+import { putLocationByUser } from "../../models/models";
 
-const SearchResult = ({ searchTerm, coords }) => {
+const SearchResult = ({ searchTerm, coords, user }) => {
   const [imageUrl, setImageUrl] = useState("");
   const [govAPI, setGovAPI] = useState("");
   const searchTermGov = searchTerm.toLowerCase();
@@ -13,6 +14,7 @@ const SearchResult = ({ searchTerm, coords }) => {
     getLocationImage();
   }, []);
 
+  console.log(coords.lat);
   async function getLocationImage() {
     let randomNumber = Math.floor(Math.random() * 5);
     const response = await fetch(requestUrl);
@@ -24,10 +26,10 @@ const SearchResult = ({ searchTerm, coords }) => {
       `https://pacific-journey-78384.herokuapp.com/https://www.gov.uk/api/content/foreign-travel-advice/${searchTermGov}`
     );
     const govData = await govResponse.json();
-    console.log(govData.details.summary);
+    //console.log(govData.details.summary);
     setGovAPI(govData.details.summary);
   }
-
+  //console.log("from results page", user.sub);
   return (
     <div className="results-page">
       <div className="top-picture">
@@ -38,6 +40,11 @@ const SearchResult = ({ searchTerm, coords }) => {
           <div></div>
         </div>
         <p className="country-name">{searchTerm.toUpperCase()}</p>
+        <button
+          onClick={() => putLocationByUser(user, coords, searchTerm, imageUrl)}
+        >
+          Save
+        </button>
       </div>
       <div className="bottom-results">
         <div
