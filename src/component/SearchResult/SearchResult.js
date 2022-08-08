@@ -17,6 +17,8 @@ const SearchResult = ({
 
   const search = useLocation().search;
   const location = new URLSearchParams(search).get("location");
+  const lat = new URLSearchParams(search).get("lat");
+  const lng = new URLSearchParams(search).get("lng");
 
   const searchTermGov = location.toLowerCase().split(" ").join("-");
   const ApiKey = process.env.REACT_APP_UNSPLASH;
@@ -78,7 +80,7 @@ const SearchResult = ({
               dangerouslySetInnerHTML={{ __html: govAPI }}
             ></div>
             <div className="map">
-              <MapContainer coords={coords} />
+              <MapContainer lat={lat} lng={lng} />
             </div>
           </div>
         </div>
