@@ -12,7 +12,7 @@ export class MapContainer extends Component {
   render() {
     return (
       <>
-        {isNaN(this.props.coords.lat) ? null : (
+        {isNaN(this.props.lat) ? null : (
           <Map
             className="googleMap"
             google={this.props.google}
@@ -20,8 +20,8 @@ export class MapContainer extends Component {
             style={mapStyles}
             disableDefaultUI={true}
             initialCenter={{
-              lat: this.props.coords.lat,
-              lng: this.props.coords.lng,
+              lat: this.props.lat,
+              lng: this.props.lng,
             }}
           />
         )}
