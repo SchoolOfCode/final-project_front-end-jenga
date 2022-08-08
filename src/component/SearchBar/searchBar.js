@@ -25,7 +25,7 @@ export default function SearchBar({
 
   const handleSelect = (addressInput) => {
     setSearchTerm(addressInput);
-    navigate("/SearchResult");
+    navigate(`/SearchResult?location=${addressInput}`);
 
     geocodeByAddress(addressInput)
       .then((results) => getLatLng(results[0])) //not using this function only Console logging
