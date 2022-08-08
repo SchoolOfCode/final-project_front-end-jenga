@@ -1,0 +1,5 @@
+.categoryBar {
+  position: absolute;
+  z-index: 1000;
+  background-color: red;
+}

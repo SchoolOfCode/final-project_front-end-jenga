@@ -21,14 +21,12 @@
   z-index: 3;
 }
 
-
 .title-and-save {
   position: absolute;
   margin-top: 20vh;
   margin-left: 5vw;
   z-index: 4;
 }
-
 
 .country-name {
   margin: 0;
@@ -75,15 +73,38 @@
   z-index: 4;
 }
 
-.text {
+.text-govAPI {
   border-radius: 15px 0px 0px 0px;
   width: 60vw;
   overflow: scroll;
   background-color: whitesmoke;
   z-index: 4;
+  text-decoration: none;
+}
+/* .text-govAPI div:nth-of-type(n) {
+  color: green;
+  font-family: "Dosis", sans-serif;
+  padding-left: 3vh;
+  text-decoration: none;
+  color: red;
+  margin-top: -5px;
 }
 
-/* Everything below is point is spinner CSS taken from loading.io*/
+.text-govAPI > p {
+  color: green;
+  font-family: "Dosis", sans-serif;
+  padding-left: 3vh;
+  padding-top: 3vh;
+  text-decoration: none;
+} */
+
+.text-govAPI > div {
+  color: red;
+  font-family: "Dosis", sans-serif;
+  padding-left: 3vh;
+  padding-top: 3vh;
+  text-decoration: none;
+}
 
 .lds-facebook {
   display: inline-block;

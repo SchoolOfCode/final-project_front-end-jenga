@@ -3,6 +3,7 @@ import "./SearchResult.css";
 import MapContainer from "../Map/Map.js";
 import { putLocationByUser } from "../../models/models";
 import ErrorPage from "../ErrorPage/errorPage";
+import CategoryBar from "../CategoryBar/categoryBar";
 
 const SearchResult = ({
   searchTerm,
@@ -14,6 +15,7 @@ const SearchResult = ({
   const [imageUrl, setImageUrl] = useState("");
   const [govAPI, setGovAPI] = useState("");
   const searchTermGov = searchTerm.toLowerCase().split(" ").join("-");
+  console.log(searchTermGov);
   const ApiKey = process.env.REACT_APP_UNSPLASH;
   const requestUrl = `https://api.unsplash.com/search/photos?query=${searchTerm}&orientation=landscape&client_id=${ApiKey}`;
 
@@ -32,12 +34,17 @@ const SearchResult = ({
     const govResponse = await fetch(
       `https://pacific-journey-78384.herokuapp.com/https://www.gov.uk/api/content/foreign-travel-advice/${searchTermGov}`
     );
-
+    console.log(govResponse);
     const govData = await govResponse.json();
-    //console.log(govData.details.summary);
 
-    setGovAPI(govData.details.summary);
+    setGovAPI(govData.details.parts);
+
+    // console.log(govAPI);
+    // console.log(govData.details.parts[1].body);
+    // console.log(govData.details.parts[2].title);
+    // console.log(govData.details.parts[].body);
   }
+  console.log(govAPI);
   //console.log("from results page", user.sub);
   return (
     <>
@@ -68,10 +75,12 @@ const SearchResult = ({
             </div>
           </div>
           <div className="bottom-results">
+            {govAPI != 0 && <CategoryBar parts={govAPI} />}
             <div
-              className="text"
+              className="text-govAPI"
               dangerouslySetInnerHTML={{ __html: govAPI }}
             ></div>
+            §
             <div className="map">
               <MapContainer coords={coords} />
             </div>
