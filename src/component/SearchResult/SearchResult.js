@@ -81,8 +81,12 @@ const SearchResult = ({ coords, user, isAuthenticated, noResults }) => {
             <div className="text-govAPI">
               {govAPI != 0 && (
                 <>
-                  <CategoryBar parts={govAPI} handleClick={handleClick} />
-                  <CollapsibleInfo activeInfo={activeInfo} parts={govAPI} />
+                  <CategoryBar
+                    parts={govAPI}
+                    handleClick={handleClick}
+                    activeInfo={activeInfo}
+                  />
+                  {/* <CollapsibleInfo activeInfo={activeInfo} parts={govAPI} /> */}
                 </>
               )}
             </div>
