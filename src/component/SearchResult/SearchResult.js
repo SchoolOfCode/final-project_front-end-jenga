@@ -13,6 +13,7 @@ const SearchResult = ({
 }) => {
   const [imageUrl, setImageUrl] = useState("");
   const [govAPI, setGovAPI] = useState("");
+  const [profileImage, setProfileImage] = useState("");
   const searchTermGov = searchTerm.toLowerCase();
   const ApiKey = process.env.REACT_APP_UNSPLASH;
   const requestUrl = `https://api.unsplash.com/search/photos?query=${searchTerm}&orientation=landscape&client_id=${ApiKey}`;
@@ -28,6 +29,7 @@ const SearchResult = ({
     const data = await response.json();
     let oneImage = data.results[randomNumber];
     setImageUrl(oneImage.urls.full);
+    setProfileImage(oneImage.urls.small);
 
     const govResponse = await fetch(
       `https://pacific-journey-78384.herokuapp.com/https://www.gov.uk/api/content/foreign-travel-advice/${searchTermGov}`
@@ -57,7 +59,7 @@ const SearchResult = ({
                 <button
                   className="save-button"
                   onClick={() =>
-                    putLocationByUser(user, coords, searchTerm, imageUrl)
+                    putLocationByUser(user, coords, searchTerm, profileImage)
                   }
                 >
                   Save

@@ -56,7 +56,7 @@ const Profile = ({ user, isAuthenticated, isLoading }) => {
           {savedLocations == 0
             ? []
             : savedLocations?.map((e) => (
-                <div className="Carousel" key="{savedLocations.locationId}">
+                <div className="Carousel" key={savedLocations.locationId}>
                   <h1>
                     {e.locationName.charAt(0).toUpperCase() +
                       e.locationName.slice(1)}
