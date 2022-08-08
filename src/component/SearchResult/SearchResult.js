@@ -1,24 +1,25 @@
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import "./SearchResult.css";
 import MapContainer from "../Map/Map.js";
 import { putLocationByUser } from "../../models/models";
 import ErrorPage from "../ErrorPage/errorPage";
 import CategoryBar from "../CategoryBar/categoryBar";
 import CollapsibleInfo from "../CollapsibleInfo/CollapsibleInfo.js";
-const SearchResult = ({
-  searchTerm,
-  coords,
-  user,
-  isAuthenticated,
-  noResults,
-}) => {
+
+const SearchResult = ({ coords, user, isAuthenticated, noResults }) => {
   const [imageUrl, setImageUrl] = useState("");
   const [govAPI, setGovAPI] = useState("");
   const [activeInfo, setActiveInfo] = useState(0);
-  const searchTermGov = searchTerm.toLowerCase().split(" ").join("-");
-  //console.log(searchTermGov);
+  const search = useLocation().search;
+  const location = new URLSearchParams(search).get("location");
+  const lat = new URLSearchParams(search).get("lat");
+  const lng = new URLSearchParams(search).get("lng");
+
+  const searchTermGov = location.toLowerCase().split(" ").join("-");
+
   const ApiKey = process.env.REACT_APP_UNSPLASH;
-  const requestUrl = `https://api.unsplash.com/search/photos?query=${searchTerm}&orientation=landscape&client_id=${ApiKey}`;
+  const requestUrl = `https://api.unsplash.com/search/photos?query=${location}&orientation=landscape&client_id=${ApiKey}`;
 
   useEffect(() => {
     getLocationImage();
@@ -35,21 +36,14 @@ const SearchResult = ({
     const govResponse = await fetch(
       `https://pacific-journey-78384.herokuapp.com/https://www.gov.uk/api/content/foreign-travel-advice/${searchTermGov}`
     );
-    console.log(govResponse);
+
     const govData = await govResponse.json();
 
     setGovAPI(govData.details.parts);
-
-    //console.log(govAPI);
-    //console.log(govData.details.parts[1].body);
-    //console.log(govData.details.parts[1].title);
-    // console.log(govData.details.parts[].body);
   }
-  //console.log(govAPI);
-  //console.log("from results page", user.sub);
+
   function handleClick(part) {
     setActiveInfo(govAPI.indexOf(part));
-    //console.log(`i've been clicked ${part.title}`);
   }
   return (
     <>
@@ -65,13 +59,13 @@ const SearchResult = ({
               <div></div>
             </div>
             <div className="title-and-save">
-              <p className="country-name">{searchTerm.toUpperCase()}</p>
+              <p className="country-name">{location.toUpperCase()}</p>
               {isAuthenticated && (
                 <button
                   className="save-button"
                   onClick={() => {
-                    alert(`${searchTerm} has been saved to your profile.`);
-                    putLocationByUser(user, coords, searchTerm, imageUrl);
+                    alert(`${location} has been saved to your profile.`);
+                    putLocationByUser(user, coords, location, imageUrl);
                   }}
                 >
                   Save
@@ -90,7 +84,7 @@ const SearchResult = ({
             </div>
 
             <div className="map">
-              <MapContainer coords={coords} />
+              <MapContainer lat={lat} lng={lng} />
             </div>
           </div>
         </div>

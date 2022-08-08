@@ -37,7 +37,6 @@ function App() {
           path="/SearchResult"
           element={
             <SearchResult
-              searchTerm={searchTerm}
               coords={coords}
               user={user}
               isAuthenticated={isAuthenticated}
