@@ -34,11 +34,8 @@ const SearchResult = ({
     );
     const govData = await govResponse.json();
     //console.log(govData.details.summary);
-    const desiredHtml = govData.details.summary.replaceAll(
-      'href="/',
-      'href="https://www.gov.uk/'
-    );
-    setGovAPI(desiredHtml);
+
+    setGovAPI(govData.details.summary);
   }
   //console.log("from results page", user.sub);
   return (
@@ -69,7 +66,10 @@ const SearchResult = ({
             </div>
           </div>
           <div className="bottom-results">
-            <div className="text" desiredHtml={{ __html: govAPI }}></div>
+            <div
+              className="text"
+              dangerouslySetInnerHTML={{ __html: govAPI }}
+            ></div>
             <div className="map">
               <MapContainer coords={coords} />
             </div>
