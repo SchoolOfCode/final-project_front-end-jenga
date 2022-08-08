@@ -5,13 +5,7 @@ import MapContainer from "../Map/Map.js";
 import { putLocationByUser } from "../../models/models";
 import ErrorPage from "../ErrorPage/errorPage";
 
-const SearchResult = ({
-  searchTerm,
-  coords,
-  user,
-  isAuthenticated,
-  noResults,
-}) => {
+const SearchResult = ({ coords, user, isAuthenticated, noResults }) => {
   const [imageUrl, setImageUrl] = useState("");
   const [govAPI, setGovAPI] = useState("");
 
