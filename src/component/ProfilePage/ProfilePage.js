@@ -39,10 +39,10 @@ const Profile = ({ user, isAuthenticated, isLoading }) => {
   }
   return (
     isAuthenticated && (
-      <div>
+      <div className="profile-background-image">
         <div className="profile-info">
           <img className="profile-picture" src={user.picture} alt={user.name} />
-          <h2>{user.name}</h2>
+          <h2>{user.name.toUpperCase()}</h2>
         </div>
         {/*<button onClick={getLocation}>press me for everything</button>
      <button onClick={() => getLocationByUser(user)}>
