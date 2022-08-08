@@ -4,7 +4,7 @@ import MapContainer from "../Map/Map.js";
 import { putLocationByUser } from "../../models/models";
 import ErrorPage from "../ErrorPage/errorPage";
 import CategoryBar from "../CategoryBar/categoryBar";
-
+import CollapsibleInfo from "../CollapsibleInfo/CollapsibleInfo.js";
 const SearchResult = ({
   searchTerm,
   coords,
@@ -14,6 +14,7 @@ const SearchResult = ({
 }) => {
   const [imageUrl, setImageUrl] = useState("");
   const [govAPI, setGovAPI] = useState("");
+  const [activeInfo, setActiveInfo] = useState("");
   const searchTermGov = searchTerm.toLowerCase().split(" ").join("-");
   console.log(searchTermGov);
   const ApiKey = process.env.REACT_APP_UNSPLASH;
@@ -40,12 +41,16 @@ const SearchResult = ({
     setGovAPI(govData.details.parts);
 
     // console.log(govAPI);
-    // console.log(govData.details.parts[1].body);
-    // console.log(govData.details.parts[2].title);
+    console.log(govData.details.parts[1].body);
+    console.log(govData.details.parts[1].title);
     // console.log(govData.details.parts[].body);
   }
   console.log(govAPI);
   //console.log("from results page", user.sub);
+  function handleClick(part) {
+    setActiveInfo(part.title);
+    console.log(`i've been clicked ${part.title}`);
+  }
   return (
     <>
       {noResults === "ZERO_RESULTS" ? (
@@ -75,12 +80,15 @@ const SearchResult = ({
             </div>
           </div>
           <div className="bottom-results">
-            {govAPI != 0 && <CategoryBar parts={govAPI} />}
-            <div
-              className="text-govAPI"
-              dangerouslySetInnerHTML={{ __html: govAPI }}
-            ></div>
-            §
+            <div className="text-govAPI">
+              {govAPI != 0 && (
+                <>
+                  <CategoryBar parts={govAPI} handleClick={handleClick} />
+                  <CollapsibleInfo activeInfo={activeInfo} parts={govAPI} />
+                </>
+              )}
+            </div>
+
             <div className="map">
               <MapContainer coords={coords} />
             </div>
