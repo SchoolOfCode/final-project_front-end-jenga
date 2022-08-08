@@ -33,16 +33,16 @@ const Profile = ({ user, isAuthenticated, isLoading }) => {
       ...savedLocations.filter((element) => element.locationId !== locationId),
     ]);
   }
-  console.log("Main", savedLocations);
+  //console.log("Main", savedLocations[0].locationId);
   if (isLoading) {
     return <div>Loading ...</div>;
   }
   return (
     isAuthenticated && (
       <div>
-       <div className="profile-info">
-        <img className= "profile-picture" src={user.picture} alt={user.name} />
-        <h2>{user.name}</h2>
+        <div className="profile-info">
+          <img className="profile-picture" src={user.picture} alt={user.name} />
+          <h2>{user.name}</h2>
         </div>
         {/*<button onClick={getLocation}>press me for everything</button>
      <button onClick={() => getLocationByUser(user)}>
@@ -56,7 +56,7 @@ const Profile = ({ user, isAuthenticated, isLoading }) => {
           {savedLocations == 0
             ? []
             : savedLocations?.map((e) => (
-                <div className="Carousel" key={savedLocations.locationId}>
+                <div className="Carousel" key={e.locationId}>
                   <h1>
                     {e.locationName.charAt(0).toUpperCase() +
                       e.locationName.slice(1)}
