@@ -40,8 +40,10 @@ const Profile = ({ user, isAuthenticated, isLoading }) => {
   return (
     isAuthenticated && (
       <div>
-        <img src={user.picture} alt={user.name} />
+       <div className="profile-info">
+        <img className= "profile-picture" src={user.picture} alt={user.name} />
         <h2>{user.name}</h2>
+        </div>
         {/*<button onClick={getLocation}>press me for everything</button>
      <button onClick={() => getLocationByUser(user)}>
      press me for filtered result
