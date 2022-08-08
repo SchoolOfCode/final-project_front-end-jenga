@@ -34,7 +34,7 @@ const SearchResult = ({
     );
     const govData = await govResponse.json();
     //console.log(govData.details.summary);
-    const desiredHtml = govData.detailssummary.replaceAll(
+    const desiredHtml = govData.details.summary.replaceAll(
       'href="/',
       'href="https://www.gov.uk/'
     );
