@@ -14,9 +14,9 @@ const SearchResult = ({
 }) => {
   const [imageUrl, setImageUrl] = useState("");
   const [govAPI, setGovAPI] = useState("");
-  const [activeInfo, setActiveInfo] = useState("");
+  const [activeInfo, setActiveInfo] = useState(0);
   const searchTermGov = searchTerm.toLowerCase().split(" ").join("-");
-  console.log(searchTermGov);
+  //console.log(searchTermGov);
   const ApiKey = process.env.REACT_APP_UNSPLASH;
   const requestUrl = `https://api.unsplash.com/search/photos?query=${searchTerm}&orientation=landscape&client_id=${ApiKey}`;
 
@@ -40,16 +40,16 @@ const SearchResult = ({
 
     setGovAPI(govData.details.parts);
 
-    // console.log(govAPI);
-    console.log(govData.details.parts[1].body);
-    console.log(govData.details.parts[1].title);
+    //console.log(govAPI);
+    //console.log(govData.details.parts[1].body);
+    //console.log(govData.details.parts[1].title);
     // console.log(govData.details.parts[].body);
   }
-  console.log(govAPI);
+  //console.log(govAPI);
   //console.log("from results page", user.sub);
   function handleClick(part) {
-    setActiveInfo(part.title);
-    console.log(`i've been clicked ${part.title}`);
+    setActiveInfo(govAPI.indexOf(part));
+    //console.log(`i've been clicked ${part.title}`);
   }
   return (
     <>

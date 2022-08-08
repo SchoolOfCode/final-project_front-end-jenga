@@ -8,7 +8,7 @@ export default function CategoryBar({ parts, activeCategory, handleClick }) {
           onClick={() => {
             handleClick(part);
           }}
-          key={part}
+          key={part.title}
         >
           {part.title}
         </button>
