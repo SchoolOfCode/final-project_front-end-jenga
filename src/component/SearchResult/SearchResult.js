@@ -11,6 +11,9 @@ const SearchResult = ({ coords, user, isAuthenticated, noResults }) => {
   const [imageUrl, setImageUrl] = useState("");
   const [govAPI, setGovAPI] = useState("");
   const [activeInfo, setActiveInfo] = useState(0);
+
+  const [profileImage, setProfileImage] = useState("");
+
   const search = useLocation().search;
   const location = new URLSearchParams(search).get("location");
   const lat = new URLSearchParams(search).get("lat");
@@ -32,6 +35,7 @@ const SearchResult = ({ coords, user, isAuthenticated, noResults }) => {
     const data = await response.json();
     let oneImage = data.results[randomNumber];
     setImageUrl(oneImage.urls.full);
+    setProfileImage(oneImage.urls.small);
 
     const govResponse = await fetch(
       `https://pacific-journey-78384.herokuapp.com/https://www.gov.uk/api/content/foreign-travel-advice/${searchTermGov}`
@@ -65,7 +69,7 @@ const SearchResult = ({ coords, user, isAuthenticated, noResults }) => {
                   className="save-button"
                   onClick={() => {
                     alert(`${location} has been saved to your profile.`);
-                    putLocationByUser(user, coords, location, imageUrl);
+                    putLocationByUser(user, coords, location, profileImage);
                   }}
                 >
                   Save
