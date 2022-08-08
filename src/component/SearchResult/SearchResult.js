@@ -4,12 +4,15 @@ import "./SearchResult.css";
 import MapContainer from "../Map/Map.js";
 import { putLocationByUser } from "../../models/models";
 import ErrorPage from "../ErrorPage/errorPage";
+import CategoryBar from "../CategoryBar/categoryBar";
+import CollapsibleInfo from "../CollapsibleInfo/CollapsibleInfo.js";
 
 const SearchResult = ({ coords, user, isAuthenticated, noResults }) => {
   const [imageUrl, setImageUrl] = useState("");
   const [govAPI, setGovAPI] = useState("");
+  const [activeInfo, setActiveInfo] = useState(0);
+
   const [profileImage, setProfileImage] = useState("");
-  
 
   const search = useLocation().search;
   const location = new URLSearchParams(search).get("location");
@@ -17,6 +20,7 @@ const SearchResult = ({ coords, user, isAuthenticated, noResults }) => {
   const lng = new URLSearchParams(search).get("lng");
 
   const searchTermGov = location.toLowerCase().split(" ").join("-");
+
   const ApiKey = process.env.REACT_APP_UNSPLASH;
   const requestUrl = `https://api.unsplash.com/search/photos?query=${location}&orientation=landscape&client_id=${ApiKey}`;
 
@@ -38,11 +42,13 @@ const SearchResult = ({ coords, user, isAuthenticated, noResults }) => {
     );
 
     const govData = await govResponse.json();
-    //console.log(govData.details.summary);
 
-    setGovAPI(govData.details.summary);
+    setGovAPI(govData.details.parts);
   }
-  //console.log("from results page", user.sub);
+
+  function handleClick(part) {
+    setActiveInfo(govAPI.indexOf(part));
+  }
   return (
     <>
       {noResults === "ZERO_RESULTS" ? (
@@ -72,10 +78,15 @@ const SearchResult = ({ coords, user, isAuthenticated, noResults }) => {
             </div>
           </div>
           <div className="bottom-results">
-            <div
-              className="text"
-              dangerouslySetInnerHTML={{ __html: govAPI }}
-            ></div>
+            <div className="text-govAPI">
+              {govAPI != 0 && (
+                <>
+                  <CategoryBar parts={govAPI} handleClick={handleClick} />
+                  <CollapsibleInfo activeInfo={activeInfo} parts={govAPI} />
+                </>
+              )}
+            </div>
+
             <div className="map">
               <MapContainer lat={lat} lng={lng} />
             </div>

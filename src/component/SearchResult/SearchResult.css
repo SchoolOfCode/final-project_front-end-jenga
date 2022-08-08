@@ -21,14 +21,12 @@
   z-index: 3;
 }
 
-
 .title-and-save {
   position: absolute;
   margin-top: 20vh;
   margin-left: 5vw;
   z-index: 4;
 }
-
 
 .country-name {
   margin: 0;
@@ -75,15 +73,14 @@
   z-index: 4;
 }
 
-.text {
+.text-govAPI {
   border-radius: 15px 0px 0px 0px;
   width: 60vw;
   overflow: scroll;
   background-color: whitesmoke;
   z-index: 4;
+  text-decoration: none;
 }
-
-/* Everything below is point is spinner CSS taken from loading.io*/
 
 .lds-facebook {
   display: inline-block;
