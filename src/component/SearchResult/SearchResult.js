@@ -56,9 +56,10 @@ const SearchResult = ({
               {isAuthenticated && (
                 <button
                   className="save-button"
-                  onClick={() =>
-                    putLocationByUser(user, coords, searchTerm, imageUrl)
-                  }
+                  onClick={() => {
+                    alert(`${searchTerm} has been saved to your profile.`);
+                    putLocationByUser(user, coords, searchTerm, imageUrl);
+                  }}
                 >
                   Save
                 </button>
