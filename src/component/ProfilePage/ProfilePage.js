@@ -5,6 +5,7 @@ import Item from "./item.js";
 import Carousel from "react-elastic-carousel";
 import { useState, useEffect } from "react";
 import ErrorPage from "../ErrorPage/errorPage.js";
+import { Link } from "react-router-dom";
 import {
   getLocation,
   getLocationByUser,
@@ -38,43 +39,53 @@ const Profile = ({ user, isAuthenticated, isLoading }) => {
   if (isLoading) {
     return <div>Loading ...</div>;
   }
-  return (
-    isAuthenticated ? (
-      <div className="profile-background-image">
-        <div className="profile-info">
-          <img className="profile-picture" src={user.picture} alt={user.name} />
-          <h2>{user.name.toUpperCase()}</h2>
-        </div>
-        {/*<button onClick={getLocation}>press me for everything</button>
+  return isAuthenticated ? (
+    <div className="profile-background-image">
+      <div className="profile-info">
+        <img className="profile-picture" src={user.picture} alt={user.name} />
+        <h2>{user.name.toUpperCase()}</h2>
+      </div>
+      {/*<button onClick={getLocation}>press me for everything</button>
      <button onClick={() => getLocationByUser(user)}>
      press me for filtered result
     </button> */}
-        {/* <button onClick={() => deleteLocation(toDelete)}>
+      {/* <button onClick={() => deleteLocation(toDelete)}>
      Delete your favourite location
     </button> */}
-        {/* <input type="text" onChange={handleChange} /> */}
-        <Carousel itemsToShow={4}>
-          {savedLocations == 0
-            ? []
-            : savedLocations?.map((e) => (
-                <div className="Carousel" key={e.locationId}>
-                  <h1>
-                    {e.locationName.charAt(0).toUpperCase() +
-                      e.locationName.slice(1)}
-                  </h1>
-                  <img className="image" src={e.locationImage} alt="none"></img>
-                  <button
-                    className="sign"
-                    onClick={() => deleteLocation(e.locationId)}
-                  >
-                    remove
-                  </button>
-                </div>
-              ))}
-        </Carousel>
-      </div>
-    ):
-    <ErrorPage/>
+      {/* <input type="text" onChange={handleChange} /> */}
+      <Carousel itemsToShow={4}>
+        {savedLocations == 0
+          ? []
+          : savedLocations?.map((e) => (
+              <div className="full-location-card">
+                <Link
+                  to={`/SearchResult?location=${e.locationName}&lat=${e.latitude}&lng=${e.longitude}`}
+                  className="profile-link"
+                >
+                  <div className="Carousel" key={e.locationId}>
+                    <h1>
+                      {e.locationName.charAt(0).toUpperCase() +
+                        e.locationName.slice(1)}
+                    </h1>
+                    <img
+                      className="image"
+                      src={e.locationImage}
+                      alt="none"
+                    ></img>
+                  </div>
+                </Link>
+                <button
+                  className="sign"
+                  onClick={() => deleteLocation(e.locationId)}
+                >
+                  remove
+                </button>
+              </div>
+            ))}
+      </Carousel>
+    </div>
+  ) : (
+    <ErrorPage />
   );
 };
 export default Profile;
