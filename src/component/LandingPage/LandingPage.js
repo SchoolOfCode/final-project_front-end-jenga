@@ -16,7 +16,7 @@ function LandingPage({ searchTerm, setSearchTerm, setCoords, setNoResults }) {
   return (
     <div className="landing-page-edit">
       <div className="search-tools">
-        <h2 className="where-to-next">Where to next...</h2>
+        <h2 className="where-to-next">Travel advice for...</h2>
         <SearchBar
           searchTerm={searchTerm}
           setSearchTerm={setSearchTerm}
