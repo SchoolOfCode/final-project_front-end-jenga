@@ -12,7 +12,8 @@ describe("Landing Page", () => {
       .its(0)
       .click();
     cy.get(".autocomplete-dropdown-container").click();
-    //   cy.get('.suggestion-item').click();
+    // cy.get('.suggestion-item').click();
+    // the above code shows all the drop down options
     cy.get(":nth-child(1) > span")
       .click()
       .url()
@@ -25,3 +26,4 @@ describe("Landing Page", () => {
 });
 // From Line 6-10, we are getting the dropdown menu by typing letter "d" which then gives Denmark as the first choice in the dropdown
 //menu. It then selects and clicks Denmark.
+//Line 16, it's accessing the first element from the dropdown menu and then clicks it and then cheks it has the correct URL.
