@@ -4,6 +4,7 @@ import Axios from "axios";
 import Item from "./item.js";
 import Carousel from "react-elastic-carousel";
 import { useState, useEffect } from "react";
+import ErrorPage from "../ErrorPage/errorPage.js";
 import {
   getLocation,
   getLocationByUser,
@@ -38,7 +39,7 @@ const Profile = ({ user, isAuthenticated, isLoading }) => {
     return <div>Loading ...</div>;
   }
   return (
-    isAuthenticated && (
+    isAuthenticated ? (
       <div className="profile-background-image">
         <div className="profile-info">
           <img className="profile-picture" src={user.picture} alt={user.name} />
@@ -72,7 +73,8 @@ const Profile = ({ user, isAuthenticated, isLoading }) => {
               ))}
         </Carousel>
       </div>
-    )
+    ):
+    <ErrorPage/>
   );
 };
 export default Profile;
