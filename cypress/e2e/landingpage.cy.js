@@ -16,11 +16,11 @@ describe("Landing Page", () => {
     cy.get(":nth-child(1) > span")
       .click()
       .url()
-      .should("eq", `${url}SearchResult`);
+      .should("eq", "http://localhost:3000/SearchResult?location=Denmark&lat=56.26392&lng=9.501785");
 
-    cy.get("a > .nav-link").should("contain", "HOME");
-    cy.get("a > .nav-link").click();
-    cy.get(".title").should("contain", "FINDERS KEEPERS");
+      cy.get('.home-button').should("contain", "Home");
+      cy.get('.home-button').click();
+      cy.get(".title").should("contain", "FINDERS KEEPERS");
   });
 });
 // From Line 6-10, we are getting the dropdown menu by typing letter "d" which then gives Denmark as the first choice in the dropdown
