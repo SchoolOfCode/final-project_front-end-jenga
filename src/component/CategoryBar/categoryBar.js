@@ -1,18 +1,24 @@
+import React from "react";
+import { useState } from "react";
 import "./catergoryBar.css";
-export default function CategoryBar({ parts, activeCategory, handleClick }) {
+
+const CategoryTab = ({ title, body }) => {
+  const [isActive, setIsActive] = useState(false);
+  //console.log("catergoary tab connected")
   return (
-    <div className="categoryBar">
-      {parts?.map((part) => (
-        <button
-          className={`category-btn ${part === activeCategory ? "active" : ""}`}
-          onClick={() => {
-            handleClick(part);
-          }}
-          key={part.title}
-        >
-          {part.title}
-        </button>
-      ))}
+    <div className="accordion-item">
+      <div className="accordion-title" onClick={() => setIsActive(!isActive)}>
+        <div>{title}</div>
+        <div>{isActive ? "-" : "+"}</div>
+      </div>
+      {isActive && (
+        <div
+          className="accordion-content"
+          dangerouslySetInnerHTML={{ __html: body }}
+        ></div>
+      )}
     </div>
   );
-}
+};
+
+export default CategoryTab;

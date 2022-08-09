@@ -5,12 +5,10 @@ import MapContainer from "../Map/Map.js";
 import { putLocationByUser } from "../../models/models";
 import ErrorPage from "../ErrorPage/errorPage";
 import CategoryBar from "../CategoryBar/categoryBar";
-import CollapsibleInfo from "../CollapsibleInfo/CollapsibleInfo.js";
 
 const SearchResult = ({ coords, user, isAuthenticated, noResults }) => {
   const [imageUrl, setImageUrl] = useState("");
   const [govAPI, setGovAPI] = useState("");
-  const [activeInfo, setActiveInfo] = useState(0);
 
   const [profileImage, setProfileImage] = useState("");
 
@@ -46,9 +44,6 @@ const SearchResult = ({ coords, user, isAuthenticated, noResults }) => {
     setGovAPI(govData.details.parts);
   }
 
-  function handleClick(part) {
-    setActiveInfo(govAPI.indexOf(part));
-  }
   return (
     <>
       {noResults === "ZERO_RESULTS" ? (
@@ -81,8 +76,9 @@ const SearchResult = ({ coords, user, isAuthenticated, noResults }) => {
             <div className="text-govAPI">
               {govAPI != 0 && (
                 <>
-                  <CategoryBar parts={govAPI} handleClick={handleClick} />
-                  <CollapsibleInfo activeInfo={activeInfo} parts={govAPI} />
+                  {govAPI.map(({ title, body }) => (
+                    <CategoryBar title={title} body={body} />
+                  ))}
                 </>
               )}
             </div>
