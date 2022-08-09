@@ -46,6 +46,7 @@ export default function SearchBar({
     location: new google.maps.LatLng(-34, 151),
     radius: 100,
     types: ["country"],
+    language: "en",
   };
 
   return (
