@@ -1,6 +1,6 @@
-const url = "http://localhost:3000/";
+const url = "https://finders-keepers-soc.netlify.app/";
 describe("Landing Page", () => {
-  it("should display correct text content", () => {
+  it("Should display correct text content on landing page and directing to the appropriate search results page", () => {
     cy.visit(url);
     cy.get(".title").should("contain", "FINDERS KEEPERS");
     cy.get(".location-search-input")
@@ -17,11 +17,15 @@ describe("Landing Page", () => {
     cy.get(":nth-child(1) > span")
       .click()
       .url()
-      .should("eq", "http://localhost:3000/SearchResult?location=Denmark&lat=56.26392&lng=9.501785");
-
-      cy.get('.home-button').should("contain", "Home");
-      cy.get('.home-button').click();
-      cy.get(".title").should("contain", "FINDERS KEEPERS");
+      .should(
+        "eq",
+        "https://finders-keepers-soc.netlify.app/SearchResult?location=Denmark&lat=56.26392&lng=9.501785"
+      );
+  });
+  it("Should return to landing page", () => {
+    cy.get(".home-button").should("contain", "Home");
+    cy.get(".home-button").click();
+    cy.get(".title").should("contain", "FINDERS KEEPERS");
   });
 });
 // From Line 6-10, we are getting the dropdown menu by typing letter "d" which then gives Denmark as the first choice in the dropdown
