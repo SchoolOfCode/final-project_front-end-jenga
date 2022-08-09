@@ -7,7 +7,7 @@
   border: none;
   text-align: left;
   outline: none;
-  font-size: 13px;
+  font-size: 19px;
   padding-top: 2vh;
   font-weight: bold;
   font-family: "Dosis", sans-serif;
@@ -15,9 +15,9 @@
 
 .accordion-content {
   padding-left: 1.3vh;
-  font-size: 15px;
+  font-size: 18px;
   font-family: "Dosis", sans-serif;
-  padding-right: 1.9vh;
+  padding-right: 3vh;
   background-color: white;
   color: black;
 }
@@ -27,7 +27,7 @@
   background-color: white;
 }
 .accordion-title {
-  font-size: 18px;
+  font-size: 21px;
 }
 .active {
   background-color: white;
