@@ -6,6 +6,7 @@ import { putLocationByUser } from "../../models/models";
 import ErrorPage from "../ErrorPage/errorPage";
 import CategoryBar from "../CategoryBar/categoryBar";
 import CollapsibleInfo from "../CollapsibleInfo/CollapsibleInfo.js";
+import CategoryTab from "../CategoryBar/CategoryTab";
 
 const SearchResult = ({ coords, user, isAuthenticated, noResults }) => {
   const [imageUrl, setImageUrl] = useState("");
@@ -81,12 +82,9 @@ const SearchResult = ({ coords, user, isAuthenticated, noResults }) => {
             <div className="text-govAPI">
               {govAPI != 0 && (
                 <>
-                  <CategoryBar
-                    parts={govAPI}
-                    handleClick={handleClick}
-                    activeInfo={activeInfo}
-                  />
-                  {/* <CollapsibleInfo activeInfo={activeInfo} parts={govAPI} /> */}
+                  {govAPI.map(({ title, body }) => (
+                    <CategoryTab title={title} body={body} />
+                  ))}
                 </>
               )}
             </div>
