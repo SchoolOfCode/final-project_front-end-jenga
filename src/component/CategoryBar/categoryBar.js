@@ -4,7 +4,7 @@ import "./catergoryBar.css";
 
 const CategoryTab = ({ title, body }) => {
   const [isActive, setIsActive] = useState(false);
-
+  //console.log("catergoary tab connected")
   return (
     <div className="accordion-item">
       <div className="accordion-title" onClick={() => setIsActive(!isActive)}>
