@@ -4,9 +4,8 @@ import "./SearchResult.css";
 import MapContainer from "../Map/Map.js";
 import { putLocationByUser } from "../../models/models";
 import ErrorPage from "../ErrorPage/errorPage";
-import CategoryBar from "../CategoryBar/categoryBar";
-import CollapsibleInfo from "../CollapsibleInfo/CollapsibleInfo.js";
-import CategoryTab from "../CategoryBar/CategoryTab";
+
+import CategoryBar from "../CategoryBar/CategoryBar";
 
 const SearchResult = ({ coords, user, isAuthenticated, noResults }) => {
   const [imageUrl, setImageUrl] = useState("");
@@ -83,7 +82,7 @@ const SearchResult = ({ coords, user, isAuthenticated, noResults }) => {
               {govAPI != 0 && (
                 <>
                   {govAPI.map(({ title, body }) => (
-                    <CategoryTab title={title} body={body} />
+                    <CategoryBar title={title} body={body} />
                   ))}
                 </>
               )}
