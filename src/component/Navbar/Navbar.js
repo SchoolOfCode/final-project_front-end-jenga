@@ -9,7 +9,7 @@ const Navbar = ({ user, isAuthenticated, isLoading }) => {
     <nav className="nav-container" aria-label="navbar">
       <div className="logo">
         <div className="balloon-container">
-          <Link to="/" className="nav-link" href="/">
+          <Link to="/" className="nav-link">
             <img className="balloon" src={svg} alt="SVG" />
           </Link>
         </div>

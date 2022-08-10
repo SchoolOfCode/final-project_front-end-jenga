@@ -24,7 +24,7 @@
   border-radius: 15px;
   width: 15vw;
   text-align: center;
-  margin-top: 45vh;
+  margin-top: 40vh;
   color: white;
   font-family: "Dosis", sans-serif;
 }
@@ -43,7 +43,7 @@
 .profile-info {
   flex-direction: row;
   justify-content: center;
-  margin-top: 20vh;
+  margin-top: 12vh;
   position: absolute;
   text-align: center;
   font-family: "Dosis", sans-serif;
@@ -55,3 +55,12 @@
   border-radius: 50%;
 }
 
+.full-location-card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-link{
+  text-decoration: none;
+}
