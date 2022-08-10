@@ -36,7 +36,7 @@ const SearchResult = ({ coords, user, isAuthenticated, noResults }) => {
     setProfileImage(oneImage.urls.small);
 
     const govResponse = await fetch(
-      `https://pacific-journey-78384.herokuapp.com/https://www.gov.uk/api/content/foreign-travel-advice/${searchTermGov}`
+      `https://www.gov.uk/api/content/foreign-travel-advice/${searchTermGov}`
     );
 
     const govData = await govResponse.json();
