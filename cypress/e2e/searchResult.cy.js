@@ -23,11 +23,21 @@ describe("Search Results Page", () => {
     cy.get(".title").should("contain", "FINDERS KEEPERS");
     cy.get(".country-name").should("contain", "DENMARK");
     cy.get(".googleMap").should("be.visible");
-    cy.get('.text-govAPI').should("be.visible");   
+    cy.get('.categoryBar > :nth-child(1)').should("contain", "Coronavirus").click();
+    cy.get('.categoryBar > :nth-child(2)').should("contain", "Safety and security");
+    cy.get('.categoryBar > :nth-child(3)').should("contain", "Terrorism");   
+    cy.get('.text-govAPI').should("be.visible");
+    //this is to get the government api part of the page and to get rid of the timeout error 
+    //remove the heroku part of the url for this test to work  
   });
-    it("should return to landing page", () => {
-    cy.get(".home-button", { timeout: 10000 }).should("contain", "Home");
-    cy.get(".home-button").click();
-    cy.get(".title").should("contain", "FINDERS KEEPERS");
-  });
-});
+  //   it("should return to landing page", () => {
+  //   cy.get(".home-button", { timeout: 10000 }).should("contain", "Home");
+  //   //timeout is there to give enough time for the government api to load before clicking on the home buton
+  //   cy.get(".home-button").click();
+  //   cy.get(".title").should("contain", "FINDERS KEEPERS");
+  // });
+// });
+// it("should display correct components", () => {
+  
+//   });
+})
