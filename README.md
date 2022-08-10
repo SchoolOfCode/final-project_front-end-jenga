@@ -14,14 +14,14 @@ We set out to solve this by creating an app that could store all the information
 #### - Profit influenced information
 Whilst doing our research to source the best information for our new application we discovered a second problem; profit influenced the information websites provided. We found that websites seemed to avoid tougher topics like crime or possible negatives to travel in order to sell you their travel guides for example.
 This gave us a unique opportunity.
-We didn’t need to make profit. Heck, we didn’t even need to make a penny! We decided to take this as a bonus and focus on showing the truthful information - unedited and unbias.
+We didn’t need to make profit. Heck, we didn’t even need to make a penny! We decided to take this as a bonus and focus on showing the truthful information - unedited and unbiased.
 To achieve this we didn’t cherry pick our information and decided to display it to users as is. Giving our users full confidence in our information.
 
 
 ## How to use the App
 
 FINDERS KEEPERS was designed to be simple to use.    
- - On the home page you will find a search bar. Enter the country you’d like to visit to get all the unbias information you need about that destination to best inform your decision.   
+ - On the home page you will find a search bar. Enter the country you’d like to visit to get all the unbiased information you need about that destination to best inform your decision.   
  - Log in with Google or create an account to be able to save your favourite destinations to your profile page so you can easily jump back to them!
 
 
