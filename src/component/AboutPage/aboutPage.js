@@ -1,3 +1,4 @@
+import TeamMembers from "../TeamMembers/teamMembers";
 import "./aboutPage.css";
 
 export default function AboutPage() {
@@ -11,19 +12,19 @@ export default function AboutPage() {
         <p>
           FINDERS KEEPERS was designed to be simple to use. On the home page you
           will find a search bar. Enter the country you'd like to visit to get
-          all the un-bias information you need about that destination to best
+          all the unbiased information you need about that destination to best
           inform your decision.
         </p>
         <p>
           Log in with Google or create an account to be able to save your
-          favourite destinations to your profile page so you can easily jump
-          back to them!
+          favourite destinations (this is unlimited!) to your profile page so
+          you can easily jump back to them!
         </p>
         <p>
           PLUS we are working on adding a checklist feature to each saved
           location so you can be sure you have all you need before you travel!
         </p>
-        <p>(Find this applications road-map at the bottom of this page)</p>
+
         <h3>FINDERS KEEPERS</h3>
         <p>
           The FINDERS KEEPERS application was created during a 4 week project.
@@ -49,7 +50,7 @@ export default function AboutPage() {
         <h4>Profit influenced information</h4>
 
         <p>
-          Whilst doing our research to osure the best information for our new
+          Whilst doing our research to source the best information for our new
           application we discovered a second problem; profit influenced the
           information websites provided.We found that websites seemed to avoid
           tougher topics like crime or possible negatives to travel in order to
@@ -59,7 +60,7 @@ export default function AboutPage() {
         <p>
           We didn't need to make profit. Heck, we didn't even need to make a
           penny! We decided to take this as a bonus and focus on showing the
-          truthful information - unedited and un-bias.
+          truthful information - unedited and unbiased.
         </p>
         <p>
           To achieve this we didn't cherry pick our information and decided to
@@ -70,17 +71,23 @@ export default function AboutPage() {
         <p>So, who are we?</p>
         <p>
           We are team JENGA - the name comes from the first initial of each team
-          members name. We all began studying at the School of Code at the end
-          of April and for some of us that was the first time we had ever
-          written a line of code!
+          members name. We loved it so much because a JENGA tower relies on all
+          the bricks to stay standing and our team's focus was on the whole
+          tower, not on the individual brick.{" "}
+        </p>
+        <p>
+          We all began studying at the School of Code at the end of April and
+          for some of us that was the first time we had ever written a line of
+          code!
         </p>
         <p>
           As team JENGA we only met at the start of the 4 week project (which
-          produced this app). We we're all involved in everything prom product
+          produced this app). We we're all involved in everything from product
           development to front and back end code!
         </p>
         <h4>Team members -</h4>
-        <div className="team-member-links"></div>
+        <TeamMembers />
+        <p>Click on our images to view our GitHub profiles.</p>
       </div>
     </div>
   );

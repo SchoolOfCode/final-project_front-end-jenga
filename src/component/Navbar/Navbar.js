@@ -17,7 +17,7 @@ const Navbar = ({ user, isAuthenticated, isLoading }) => {
       <Link to="/" className="nav-link">
         <div className="title-subtitle-container">
           <h1 className="title"> FINDERS KEEPERS</h1>
-          <p className="subtitle">Your honest travel guide.</p>
+          <p className="subtitle">Your honest travel guide</p>
         </div>
       </Link>
       <div className="nav-buttons-container">
