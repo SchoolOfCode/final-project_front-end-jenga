@@ -18,3 +18,8 @@
   background-color: #ffffff3d;
   font-family: "Dosis", sans-serif;
 }
+
+.search-bar-container {
+  padding-left: 0.25vw;
+  padding-right: 0.25vw;
+}

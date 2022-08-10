@@ -14,8 +14,16 @@ const Navbar = ({ user, isAuthenticated, isLoading }) => {
           </Link>
         </div>
       </div>
-      <h1 className="title"> FINDERS KEEPERS</h1>
+      <Link to="/" className="nav-link">
+        <div className="title-subtitle-container">
+          <h1 className="title"> FINDERS KEEPERS</h1>
+          <p className="subtitle">Your honest travel guide</p>
+        </div>
+      </Link>
       <div className="nav-buttons-container">
+        <Link to="/About" className="about-button">
+          About Us
+        </Link>
         <Link to="/" className="home-button">
           Home
         </Link>

@@ -57,7 +57,7 @@ export default function SearchBar({
       searchOptions={searchOptions}
     >
       {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
-        <div>
+        <div className="search-bar-container">
           <input
             {...getInputProps({
               placeholder: "SEARCH",
