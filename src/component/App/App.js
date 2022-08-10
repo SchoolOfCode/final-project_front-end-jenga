@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Profile from "../ProfilePage/ProfilePage.js";
 
 import { useAuth0 } from "@auth0/auth0-react";
+import AboutPage from "../AboutPage/aboutPage";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -54,6 +55,7 @@ function App() {
             />
           }
         />
+        <Route path="/About" element={<AboutPage />} />
       </Routes>
     </Router>
   );

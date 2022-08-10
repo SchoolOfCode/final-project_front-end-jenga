@@ -21,6 +21,9 @@ const Navbar = ({ user, isAuthenticated, isLoading }) => {
         </div>
       </Link>
       <div className="nav-buttons-container">
+        <Link to="/About" className="about-button">
+          About Us
+        </Link>
         <Link to="/" className="home-button">
           Home
         </Link>
