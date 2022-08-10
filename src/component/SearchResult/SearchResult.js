@@ -4,7 +4,7 @@ import "./SearchResult.css";
 import MapContainer from "../Map/Map.js";
 import { putLocationByUser } from "../../models/models";
 import ErrorPage from "../ErrorPage/errorPage";
-import CategoryBar from "../CategoryBar/CategoryBar";
+import CategoryBar from "../CategoryBar/categoryBar";
 
 const SearchResult = ({ coords, user, isAuthenticated, noResults }) => {
   const [imageUrl, setImageUrl] = useState("");
