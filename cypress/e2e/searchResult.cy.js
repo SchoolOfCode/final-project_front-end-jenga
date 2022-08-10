@@ -24,8 +24,14 @@ describe("Search Results Page", () => {
     cy.get(".country-name").should("contain", "DENMARK");
     cy.get(".googleMap").should("be.visible");
     cy.get('.categoryBar > :nth-child(1)').should("contain", "Coronavirus").click();
-    cy.get('.categoryBar > :nth-child(2)').should("contain", "Safety and security");
-    cy.get('.categoryBar > :nth-child(3)').should("contain", "Terrorism");   
+    cy.get('.categoryBar > :nth-child(2)').should("contain", "Safety and security").click();
+    // cy.get('.categoryBar > :nth-child(3)').should("contain", "Terrorism").click(); 
+    // cy.get('.categoryBar > :nth-child(4)').should("contain", "Local laws and customs").click(); 
+    // cy.get('.categoryBar > :nth-child(5)').should("contain", "Entry requirements").click(); 
+    // cy.get('.categoryBar > :nth-child(6)').should("contain", "Health").click();
+    // cy.get('.categoryBar > :nth-child(7)').should("contain", "Money").click();
+    // cy.get('.categoryBar > :nth-child(8)').should("contain", "Arctic travel").click();
+    // cy.get('.categoryBar > :nth-child(9)').should("contain", "Travel advice help and support").click();
     cy.get('.text-govAPI').should("be.visible");
     //this is to get the government api part of the page and to get rid of the timeout error 
     //remove the heroku part of the url for this test to work  
