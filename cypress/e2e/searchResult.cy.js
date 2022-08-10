@@ -23,9 +23,10 @@ describe("Search Results Page", () => {
     cy.get(".title").should("contain", "FINDERS KEEPERS");
     cy.get(".country-name").should("contain", "DENMARK");
     cy.get(".googleMap").should("be.visible");
+    cy.get('.text-govAPI').should("be.visible");   
   });
     it("should return to landing page", () => {
-    cy.get(".home-button").should("contain", "Home");
+    cy.get(".home-button", { timeout: 10000 }).should("contain", "Home");
     cy.get(".home-button").click();
     cy.get(".title").should("contain", "FINDERS KEEPERS");
   });
