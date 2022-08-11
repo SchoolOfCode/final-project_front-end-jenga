@@ -37,15 +37,25 @@ const Profile = ({ user, isAuthenticated, isLoading, coords }) => {
   // const lat = coords.lat
   // const lng = coords.lng
 
-  async function getTimeZone(lat, lng) {
-    const timezone = await fetch(
-      `https://maps.googleapis.com/maps/api/timezone/json?location=${lat},${lng}&timestamp=1331161200&key=AIzaSyCYaVEFJdt31pAuDNOCwrZyWCs1Wf-8M48`
-    );
+  const [timezone, setTimezone] = useState([]);
 
-    const timezoneData = await timezone.json();
-    console.log("Timezone", timezoneData.timeZoneName);
-    return timezoneData.timeZoneName;
+  async function getTimeZone() {
+    let emptyArray = [];
+    for (let i = 0; i < savedLocations.length; i++) {
+      const response = await fetch(
+        `https://maps.googleapis.com/maps/api/timezone/json?location=${savedLocations[i].latitude},${savedLocations[i].longitude}&timestamp=1331161200&key=AIzaSyCYaVEFJdt31pAuDNOCwrZyWCs1Wf-8M48`
+      );
+
+      const data = await response.json();
+      emptyArray.push(data);
+      console.log(emptyArray);
+    }
+    setTimezone(emptyArray);
   }
+
+  useEffect(() => {
+    getTimeZone();
+  }, [savedLocations]);
 
   //console.log("Main", savedLocations[0].locationId);
   if (isLoading) {
@@ -61,7 +71,7 @@ const Profile = ({ user, isAuthenticated, isLoading, coords }) => {
       <Carousel itemsToShow={4}>
         {savedLocations == 0
           ? []
-          : savedLocations?.map((e) => (
+          : savedLocations?.map((e, index) => (
               <div className="full-location-card">
                 <Link
                   to={`/SearchResult?location=${e.locationName}&lat=${e.latitude}&lng=${e.longitude}`}
@@ -77,7 +87,11 @@ const Profile = ({ user, isAuthenticated, isLoading, coords }) => {
                       src={e.locationImage}
                       alt="none"
                     ></img>
-                    <h3>Hello</h3>
+                    <h3>{timezone == 0 ? [] : timezone[index].timeZoneName}</h3>
+                    <h3>{timezone == 0 ? [] : timezone[index].timeZoneId}</h3>
+                    <h3>
+                      {timezone == 0 ? [] : timezone[index].rawOffset / 3600}
+                    </h3>
                   </div>
                 </Link>
                 <button
