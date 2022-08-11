@@ -40,7 +40,7 @@ const SearchResult = ({ coords, user, isAuthenticated, noResults }) => {
     );
 
     const govData = await govResponse.json();
-
+    //console.log(govData.details);
     setGovAPI(govData.details.parts);
   }
 

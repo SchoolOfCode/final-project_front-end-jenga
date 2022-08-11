@@ -78,7 +78,7 @@
   border-radius: 15px 0px 0px 0px;
   width: 60vw;
   overflow: scroll;
-
+  overflow-x: hidden;
   background-color: whitesmoke;
   z-index: 4;
   text-decoration: none;
