@@ -17,7 +17,7 @@
   flex-direction: column;
 }
 
-.search-tools{
+.search-tools {
   margin-top: 33vh;
   display: flex;
   flex-direction: column;
@@ -42,4 +42,10 @@
   -webkit-text-stroke-width: 0.01vw;
   -webkit-text-stroke-color: rgba(255, 255, 255, 0.1);
   border-radius: 15px 15px 0px 0px;
+}
+
+@media screen and (max-width: 900px) {
+  .where-to-next {
+    font-size: 7vw;
+  }
 }
