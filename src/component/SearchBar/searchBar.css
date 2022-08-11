@@ -23,3 +23,13 @@
   padding-left: 0.25vw;
   padding-right: 0.25vw;
 }
+@media screen and (max-width: 900px) {
+  .location-search-input {
+    height: 6.5vw;
+    width: 80vw;
+    font-size: 5vw;
+  }
+  .autocomplete-dropdown-container {
+    font-size: vw;
+  }
+}

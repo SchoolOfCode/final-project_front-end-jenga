@@ -125,3 +125,40 @@
     height: 32px;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .bottom-results {
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+    width: 100vw;
+  }
+
+  .text-govAPI{
+    width: 100vw;
+    height: 40vh;
+    overflow: scroll;
+    z-index: 4;
+    text-decoration: none;
+    border-radius: 0;
+    
+  }
+
+  .location-image{
+    height: 42vh;
+  }
+
+  .save-button{
+    font-size: 3vw;
+    padding: 1vh 3.5vw;
+  }
+
+  .country-name{
+    font-size: 13vw;
+  }
+
+  .title-and-save{
+    margin-top: 15vh;
+  }
+}
