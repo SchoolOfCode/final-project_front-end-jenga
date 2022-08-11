@@ -1,17 +1,12 @@
 import React from "react";
 import "./ProfilePage.css";
 import Axios from "axios";
-import Item from "./item.js";
 import Carousel from "react-elastic-carousel";
 import { useState, useEffect } from "react";
 import ErrorPage from "../ErrorPage/errorPage.js";
 import { Link } from "react-router-dom";
-import {
-  getLocation,
-  getLocationByUser,
-  deleteLocation,
-} from "../../models/models.js";
-const Profile = ({ user, isAuthenticated, isLoading }) => {
+import { getLocationByUser } from "../../models/models.js";
+const Profile = ({ user, isAuthenticated, isLoading, coords }) => {
   // const [toDelete, setToDelete] = useState("");
   const [savedLocations, setSavedLocations] = useState([]);
   useEffect(() => {
@@ -35,6 +30,23 @@ const Profile = ({ user, isAuthenticated, isLoading }) => {
       ...savedLocations.filter((element) => element.locationId !== locationId),
     ]);
   }
+
+  // const lat = 22;
+  // const lng = 4;
+
+  // const lat = coords.lat
+  // const lng = coords.lng
+
+  async function getTimeZone(lat, lng) {
+    const timezone = await fetch(
+      `https://maps.googleapis.com/maps/api/timezone/json?location=${lat},${lng}&timestamp=1331161200&key=AIzaSyCYaVEFJdt31pAuDNOCwrZyWCs1Wf-8M48`
+    );
+
+    const timezoneData = await timezone.json();
+    console.log("Timezone", timezoneData.timeZoneName);
+    return timezoneData.timeZoneName;
+  }
+
   //console.log("Main", savedLocations[0].locationId);
   if (isLoading) {
     return <div>Loading ...</div>;
@@ -45,14 +57,7 @@ const Profile = ({ user, isAuthenticated, isLoading }) => {
         <img className="profile-picture" src={user.picture} alt={user.name} />
         <h2>{user.name.toUpperCase()}</h2>
       </div>
-      {/*<button onClick={getLocation}>press me for everything</button>
-     <button onClick={() => getLocationByUser(user)}>
-     press me for filtered result
-    </button> */}
-      {/* <button onClick={() => deleteLocation(toDelete)}>
-     Delete your favourite location
-    </button> */}
-      {/* <input type="text" onChange={handleChange} /> */}
+
       <Carousel itemsToShow={4}>
         {savedLocations == 0
           ? []
@@ -72,6 +77,7 @@ const Profile = ({ user, isAuthenticated, isLoading }) => {
                       src={e.locationImage}
                       alt="none"
                     ></img>
+                    <h3>Hello</h3>
                   </div>
                 </Link>
                 <button
