@@ -27,7 +27,7 @@ const Profile = ({ user, isAuthenticated, isLoading }) => {
   }
   async function deleteLocation(locationId) {
     Axios.delete(
-      `https://pacific-journey-78384.herokuapp.com/https://8a50g75era.execute-api.eu-west-2.amazonaws.com/prod/location/${locationId}`
+      `https://8a50g75era.execute-api.eu-west-2.amazonaws.com/prod/location/${locationId}`
     ).then((response) => {
       console.log(response);
     });

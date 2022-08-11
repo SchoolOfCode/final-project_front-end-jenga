@@ -22,14 +22,14 @@ export function getLocationByUser(user) {
   const userId = getUserId(user.sub);
   //console.log(userId);
   return Axios.get(
-    `https://pacific-journey-78384.herokuapp.com/https://8a50g75era.execute-api.eu-west-2.amazonaws.com/prod/location/${userId}`
+    `https://8a50g75era.execute-api.eu-west-2.amazonaws.com/prod/location/${userId}`
   );
 }
 
 //Delete a fav place by locationId
 export async function deleteLocation(locationId) {
   Axios.delete(
-    `https://pacific-journey-78384.herokuapp.com/https://8a50g75era.execute-api.eu-west-2.amazonaws.com/prod/location/${locationId}`
+    `https://8a50g75era.execute-api.eu-west-2.amazonaws.com/prod/location/${locationId}`
   ).then((response) => {
     console.log(response);
   });
@@ -39,7 +39,7 @@ export async function deleteLocation(locationId) {
 export async function putLocationByUser(user, coords, searchTerm, imageUrl) {
   const userId = getUserId(user.sub);
   Axios.post(
-    "https://pacific-journey-78384.herokuapp.com/https://8a50g75era.execute-api.eu-west-2.amazonaws.com/prod/location/",
+    "https://8a50g75era.execute-api.eu-west-2.amazonaws.com/prod/location/",
     {
       userId: userId,
       locationId: Date.now().toString(),
