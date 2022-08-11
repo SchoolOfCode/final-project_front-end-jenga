@@ -1,16 +1,11 @@
 import React from "react";
 import "./ProfilePage.css";
 import Axios from "axios";
-import Item from "./item.js";
 import Carousel from "react-elastic-carousel";
 import { useState, useEffect } from "react";
 import ErrorPage from "../ErrorPage/errorPage.js";
 import { Link } from "react-router-dom";
-import {
-  getLocation,
-  getLocationByUser,
-  deleteLocation,
-} from "../../models/models.js";
+import { getLocationByUser } from "../../models/models.js";
 const Profile = ({ user, isAuthenticated, isLoading }) => {
   // const [toDelete, setToDelete] = useState("");
   const [savedLocations, setSavedLocations] = useState([]);

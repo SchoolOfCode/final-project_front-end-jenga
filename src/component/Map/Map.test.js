@@ -1,10 +1,10 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import App from "./App.js";
+import Map from "./Map.js";
 
 //Testing whether the AnnouncementList component is successfully rendered
-it("App - renders without crashing", () => {
+it("Map - renders without crashing", () => {
   const div = document.createElement("div");
-  ReactDOM.render(<App />, div);
+  ReactDOM.render(<Map />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
