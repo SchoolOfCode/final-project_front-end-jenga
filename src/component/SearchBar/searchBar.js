@@ -61,6 +61,7 @@ export default function SearchBar({
           <input
             {...getInputProps({
               placeholder: "SEARCH",
+              ariaLabel: "SEARCH",
               className: "location-search-input",
             })}
             // onChange={searchChange}

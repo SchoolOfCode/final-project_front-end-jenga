@@ -6,7 +6,7 @@ const CategoryTab = ({ title, body }) => {
   const [isActive, setIsActive] = useState(false);
   //console.log("catergoary tab connected")
   return (
-    <div className="accordion-item">
+    <div className="accordion-item" aria-label= {title}>
       <div className="accordion-title" onClick={() => setIsActive(!isActive)}>
         <div>{title}</div>
         <div>{isActive ? "-" : "+"}</div>
@@ -15,7 +15,7 @@ const CategoryTab = ({ title, body }) => {
         <div
           className="accordion-content"
           dangerouslySetInnerHTML={{ __html: body }}
-        ></div>
+          ></div>
       )}
     </div>
   );
