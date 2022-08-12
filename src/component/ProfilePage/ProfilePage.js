@@ -92,7 +92,7 @@ const Profile = ({ user, isAuthenticated, isLoading, coords }) => {
         <h2>{user.name.toUpperCase()}</h2>
       </div>
 
-      <Carousel itemsToShow={4}>
+      <Carousel itemsToShow={3}>
         {savedLocations == 0
           ? []
           : savedLocations?.map((e, index) => (
