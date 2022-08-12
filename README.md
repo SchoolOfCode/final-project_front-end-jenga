@@ -4,7 +4,7 @@
 <h1 align="center">Finders Keepers by JENGA - Frontend repository</h1>
 
 
-## How the App Started
+## How the App Started    
 
 The FINDERS KEEPERS application was created during a 4 week project. It’s aim was to solve a problem. 
 The problem this app aimed to solve can be split into two sections:   
