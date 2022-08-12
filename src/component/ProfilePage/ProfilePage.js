@@ -45,9 +45,9 @@ const Profile = ({ user, isAuthenticated, isLoading, coords }) => {
       const response = await fetch(
         `https://maps.googleapis.com/maps/api/timezone/json?location=${savedLocations[i].latitude},${savedLocations[i].longitude}&timestamp=1331161200&key=AIzaSyCYaVEFJdt31pAuDNOCwrZyWCs1Wf-8M48`
       );
-
       const data = await response.json();
       emptyArray.push(data);
+
       console.log(emptyArray);
     }
     setTimezone(emptyArray);
@@ -56,6 +56,26 @@ const Profile = ({ user, isAuthenticated, isLoading, coords }) => {
   useEffect(() => {
     getTimeZone();
   }, [savedLocations]);
+
+  const [weather, setWeather] = useState([]);
+
+  async function getWeather() {
+    let emptyArray = [];
+    for (let i = 0; i < savedLocations.length; i++) {
+      const response = await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?lat=${savedLocations[i].latitude}&lon=${savedLocations[i].longitude}&appid=d69d09c05d4303ecde32b9d11bd9ab8a`
+      );
+      const data = await response.json();
+      emptyArray.push(data);
+
+      console.log(emptyArray);
+    }
+    setWeather(emptyArray);
+  }
+
+  useEffect(() => {
+    getWeather();
+  }, [timezone]);
 
   //console.log("Main", savedLocations[0].locationId);
   if (isLoading) {
@@ -91,6 +111,21 @@ const Profile = ({ user, isAuthenticated, isLoading, coords }) => {
                     <h3>{timezone == 0 ? [] : timezone[index].timeZoneId}</h3>
                     <h3>
                       {timezone == 0 ? [] : timezone[index].rawOffset / 3600}
+                    </h3>
+                    <img
+                      className="weather"
+                      src={
+                        weather == 0
+                          ? ""
+                          : `http://openweathermap.org/img/w/${weather[index].weather[0].icon}.png`
+                      }
+                      alt="none"
+                    ></img>
+                    <h3>
+                      {weather == 0
+                        ? []
+                        : Math.floor(weather[index].main.temp - 273.15) +
+                          " degrees C"}
                     </h3>
                   </div>
                 </Link>

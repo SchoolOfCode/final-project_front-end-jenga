@@ -69,3 +69,9 @@
 h3 {
   margin-top: 0vh;
 }
+
+.weather {
+  margin-top: -7vh;
+  height: 60px;
+  width: 60px;
+}
