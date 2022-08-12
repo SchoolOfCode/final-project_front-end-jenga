@@ -88,7 +88,7 @@
   color: hsl(240, 17%, 98%);
   background: #3c91e6;
   letter-spacing: 0.5px;
-  margin: 0.25vw;
+  margin-left: 0.25vw;
   margin-right: 0.5vw;
 }
 .sign:hover {
@@ -169,4 +169,50 @@
 .about-button:hover {
   transition: all 0.1s ease;
   box-shadow: 0 0 0 0 #fff, 0 0 0 3px #05d2a2;
+}
+
+@media screen and (max-width: 900px) {
+  .logo {
+    display: none;
+  }
+
+  .title {
+    font-size: 7vw;
+    width: 54vw;
+    margin-top: 3vh;
+    text-shadow: 1px 1px rgb(93, 91, 91);
+  }
+
+  .subtitle {
+    font-size: 3.5vw;
+  }
+
+  .nav-buttons-container{
+    width: 46vw;
+    margin-top: .6vh;
+    justify-content: center;
+  }
+
+  .about-button{
+    font-size: 2.5vw;
+    padding: .75vh 1vw;
+    margin-left: 0.25vw;
+  }
+
+  .home-button{
+    font-size: 2.5vw;
+    padding: .75vh 1vw;
+    margin-left: 0.25vw;
+  }
+
+  .sign{
+    font-size: 2.5vw;
+    padding: .75vh 1vw;
+    margin-left: 0.25vw;
+  }
+
+  .profile-image-container{
+    width: 5vw;
+    height: 5vw;
+  }
 }
