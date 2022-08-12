@@ -112,9 +112,29 @@ const Profile = ({ user, isAuthenticated, isLoading, coords }) => {
                       alt="none"
                     ></img>
                     <h3>{timezone == 0 ? [] : timezone[index].timeZoneName}</h3>
-                    <h3>{timezone == 0 ? [] : timezone[index].timeZoneId}</h3>
+                    {/* <h3>{timezone == 0 ? [] : timezone[index].timeZoneId}</h3> */}
                     <h3>
-                      {timezone == 0 ? [] : timezone[index].rawOffset / 3600}
+                      GMT {}
+                      {timezone == 0
+                        ? []
+                        : timezone[index].rawOffset / 3600 > 0
+                        ? " + " + timezone[index].rawOffset / 3600
+                        : " - " + (timezone[index].rawOffset / 3600).toString().slice(1)}
+                    </h3>
+                    {/* <img
+                      className="weather"
+                      src={
+                        weather == 0
+                          ? ""
+                          : `http://openweathermap.org/img/w/${weather[index].weather[0].icon}.png`
+                      }
+                      alt="none"
+                    ></img> */}
+                    <h3>
+                      {weather == 0
+                        ? []
+                        : Math.floor(weather[index].main.temp - 273.15) +
+                          " °C"}
                     </h3>
                     <img
                       className="weather"
@@ -125,12 +145,6 @@ const Profile = ({ user, isAuthenticated, isLoading, coords }) => {
                       }
                       alt="none"
                     ></img>
-                    <h3>
-                      {weather == 0
-                        ? []
-                        : Math.floor(weather[index].main.temp - 273.15) +
-                          " degrees C"}
-                    </h3>
                   </div>
                 </Link>
                 <button
