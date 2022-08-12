@@ -170,3 +170,48 @@
   transition: all 0.1s ease;
   box-shadow: 0 0 0 0 #fff, 0 0 0 3px #05d2a2;
 }
+
+@media screen and (max-width: 900px) {
+  .logo {
+    display: none;
+  }
+
+  .title {
+    font-size: 7vw;
+    width: 54vw;
+    margin-top: 3vh;
+  }
+
+  .subtitle {
+    font-size: 2vw;
+  }
+
+  .nav-buttons-container{
+    width: 46vw;
+    margin-top: 1.75vh;
+    justify-content: center;
+  }
+
+  .about-button{
+    font-size: 2.5vw;
+    padding: .75vh 1vw;
+    margin-left: 0.25vw;
+  }
+
+  .home-button{
+    font-size: 2.5vw;
+    padding: .75vh 1vw;
+    margin-left: 0.25vw;
+  }
+
+  .sign{
+    font-size: 2.5vw;
+    padding: .75vh 1vw;
+    margin-left: 0.25vw;
+  }
+
+  .profile-image-container{
+    width: 5vw;
+    height: 5vw;
+  }
+}
