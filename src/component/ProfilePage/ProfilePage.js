@@ -117,7 +117,7 @@ const Profile = ({ user, isAuthenticated, isLoading, coords }) => {
                       GMT {}
                       {timezone == 0
                         ? []
-                        : timezone[index].rawOffset / 3600 > 0
+                        : timezone[index].rawOffset / 3600 >= 0
                         ? " + " + timezone[index].rawOffset / 3600
                         : " - " +
                           (timezone[index].rawOffset / 3600)
