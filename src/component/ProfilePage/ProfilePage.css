@@ -75,3 +75,20 @@ h3 {
   height: 60px;
   width: 60px;
 }
+
+.weather {
+  margin-top: -7vh;
+  height: 60px;
+  width: 60px;
+}
+.rec.rec-arrow {
+  background-color: #3c91e6;
+  border-radius: 50%;
+  color: white;
+}
+.rec.rec-dot {
+  background-color: #3c91e6;
+}
+.rec.rec-dot_active {
+  background-color: white;
+}

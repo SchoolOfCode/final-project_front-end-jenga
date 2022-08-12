@@ -8,9 +8,10 @@ import { Link } from "react-router-dom";
 import { getLocationByUser } from "../../models/models.js";
 const Profile = ({ user, isAuthenticated, isLoading, coords }) => {
   // const [toDelete, setToDelete] = useState("");
+  
   const weatherApi = process.env.REACT_APP_WEATHER;
   const timezoneApi = process.env.REACT_APP_TIMEZONE;
-  
+
   const [savedLocations, setSavedLocations] = useState([]);
   useEffect(() => {
     if (user) {
