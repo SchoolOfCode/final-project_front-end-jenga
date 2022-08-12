@@ -41,7 +41,7 @@
 .profile-info {
   flex-direction: row;
   justify-content: center;
-  margin-top: 12vh;
+  margin-top: 9vh;
   position: absolute;
   text-align: center;
   font-family: "Dosis", sans-serif;
@@ -85,10 +85,98 @@ h3 {
   background-color: #3c91e6;
   border-radius: 50%;
   color: white;
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  line-height: 30px;
+  margin-top: 30vh;
 }
 .rec.rec-dot {
   background-color: #3c91e6;
 }
 .rec.rec-dot_active {
   background-color: white;
+}
+.remove {
+  cursor: pointer;
+  font-size: 1.25vw;
+  font-weight: 600;
+  border-radius: 7px;
+  padding: 1vh 1vw;
+  border: 0;
+  color: hsl(240, 17%, 98%);
+  background: #3c91e6;
+  letter-spacing: 0.5px;
+  margin: 0.25vw;
+  margin-right: 0.5vw;
+}
+.remove:hover {
+  transition: all 0.1s ease;
+  box-shadow: 0 0 0 0 #fff, 0 0 0 3px #3c91e6;
+}
+
+@media screen and (max-width: 900px) {
+  .Carousel {
+    font-size: 3vw;
+    width: 25vw;
+    margin-top: 35vh;
+  }
+  .full-location-card {
+    /* width: 100vw;
+    height: 80vh; */
+    font-size: 2vw;
+  }
+  .weather {
+    height: 8vw;
+    width: 8vw;
+    justify-content: right;
+    margin-top: -7vw;
+    margin-right: 70px;
+  }
+  h1 {
+    font-size: 5vw;
+    padding: 0px;
+  }
+  .image {
+    width: 100%;
+    height: 100px;
+  }
+  .rec.rec.rec-arrow {
+    width: 35px;
+    height: 35px;
+    min-width: 25px;
+    line-height: 25px;
+    margin-top: 35vh;
+  }
+  .rec.rec-dot {
+    height: 1.5vh;
+    width: 1.5vw;
+  }
+  .profile-info {
+    margin-top: 7vh;
+  }
+  .remove {
+    font-size: 3vw;
+  }
+  .profile-picture {
+    border-radius: 50%;
+    margin-top: 5vh;
+    height: 10vw;
+    width: 10vw;
+  }
+}
+@media screen and (min-device-width: 800px) and (max-device-width: 1100px) {
+  .profile-info {
+    margin-top: 2vh;
+  }
+}
+@media screen and (min-device-width: 600px) and (max-device-width: 1100px) {
+  .profile-picture {
+    border-radius: 50%;
+    margin-top: 8vh;
+    height: 7vw;
+    width: 7vw;
+  }
+}
+@media screen and (min-device-width: 800px) and (max-device-width: 900px) {
 }

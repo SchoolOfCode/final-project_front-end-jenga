@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import { getLocationByUser } from "../../models/models.js";
 const Profile = ({ user, isAuthenticated, isLoading, coords }) => {
   // const [toDelete, setToDelete] = useState("");
-  
+
   const weatherApi = process.env.REACT_APP_WEATHER;
   const timezoneApi = process.env.REACT_APP_TIMEZONE;
 
@@ -119,7 +119,10 @@ const Profile = ({ user, isAuthenticated, isLoading, coords }) => {
                         ? []
                         : timezone[index].rawOffset / 3600 > 0
                         ? " + " + timezone[index].rawOffset / 3600
-                        : " - " + (timezone[index].rawOffset / 3600).toString().slice(1)}
+                        : " - " +
+                          (timezone[index].rawOffset / 3600)
+                            .toString()
+                            .slice(1)}
                     </h3>
                     {/* <img
                       className="weather"
@@ -133,8 +136,7 @@ const Profile = ({ user, isAuthenticated, isLoading, coords }) => {
                     <h3>
                       {weather == 0
                         ? []
-                        : Math.floor(weather[index].main.temp - 273.15) +
-                          " °C"}
+                        : Math.floor(weather[index].main.temp - 273.15) + " °C"}
                     </h3>
                     <img
                       className="weather"
@@ -148,7 +150,7 @@ const Profile = ({ user, isAuthenticated, isLoading, coords }) => {
                   </div>
                 </Link>
                 <button
-                  className="sign"
+                  className="remove"
                   onClick={() => deleteLocation(e.locationId)}
                 >
                   remove
