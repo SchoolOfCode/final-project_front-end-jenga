@@ -88,7 +88,7 @@
   color: hsl(240, 17%, 98%);
   background: #3c91e6;
   letter-spacing: 0.5px;
-  margin: 0.25vw;
+  margin-left: 0.25vw;
   margin-right: 0.5vw;
 }
 .sign:hover {
@@ -183,12 +183,12 @@
   }
 
   .subtitle {
-    font-size: 2vw;
+    font-size: 3.5vw;
   }
 
   .nav-buttons-container{
     width: 46vw;
-    margin-top: 1.75vh;
+    margin-top: .6vh;
     justify-content: center;
   }
 
