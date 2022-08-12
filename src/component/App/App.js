@@ -52,6 +52,7 @@ function App() {
               user={user}
               isAuthenticated={isAuthenticated}
               isLoading={isLoading}
+              coords={coords}
             />
           }
         />
