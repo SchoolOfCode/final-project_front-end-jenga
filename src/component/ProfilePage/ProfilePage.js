@@ -8,6 +8,9 @@ import { Link } from "react-router-dom";
 import { getLocationByUser } from "../../models/models.js";
 const Profile = ({ user, isAuthenticated, isLoading, coords }) => {
   // const [toDelete, setToDelete] = useState("");
+  const weatherApi = process.env.REACT_APP_WEATHER;
+  const timezoneApi = process.env.REACT_APP_TIMEZONE;
+  
   const [savedLocations, setSavedLocations] = useState([]);
   useEffect(() => {
     if (user) {
@@ -43,7 +46,7 @@ const Profile = ({ user, isAuthenticated, isLoading, coords }) => {
     let emptyArray = [];
     for (let i = 0; i < savedLocations.length; i++) {
       const response = await fetch(
-        `https://maps.googleapis.com/maps/api/timezone/json?location=${savedLocations[i].latitude},${savedLocations[i].longitude}&timestamp=1331161200&key=AIzaSyCYaVEFJdt31pAuDNOCwrZyWCs1Wf-8M48`
+        `https://maps.googleapis.com/maps/api/timezone/json?location=${savedLocations[i].latitude},${savedLocations[i].longitude}&timestamp=1331161200&key=${timezoneApi}`
       );
       const data = await response.json();
       emptyArray.push(data);
@@ -63,7 +66,7 @@ const Profile = ({ user, isAuthenticated, isLoading, coords }) => {
     let emptyArray = [];
     for (let i = 0; i < savedLocations.length; i++) {
       const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${savedLocations[i].latitude}&lon=${savedLocations[i].longitude}&appid=d69d09c05d4303ecde32b9d11bd9ab8a`
+        `https://api.openweathermap.org/data/2.5/weather?lat=${savedLocations[i].latitude}&lon=${savedLocations[i].longitude}&appid=${weatherApi}`
       );
       const data = await response.json();
       emptyArray.push(data);
