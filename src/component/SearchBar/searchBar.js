@@ -58,10 +58,9 @@ export default function SearchBar({
     >
       {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
         <div className="search-bar-container">
-          <input
+          <input aria-label="search"
             {...getInputProps({
               placeholder: "SEARCH",
-              ariaLabel: "SEARCH",
               className: "location-search-input",
             })}
             // onChange={searchChange}

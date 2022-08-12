@@ -5,10 +5,10 @@ export default function AboutPage() {
   return (
     <div className="about-page-container">
       <div className="top-half-container">
-        <h2 className="about-us-title">ABOUT US</h2>
+        <h2 className="about-us-title" aria-label = "information about us">ABOUT US</h2>
       </div>
       <div className="bottom-content">
-        <h3>HOW TO USE THE APP</h3>
+        <h3 aria-label = "information about the app">HOW TO USE THE APP</h3>
         <p>
           FINDERS KEEPERS was designed to be simple to use. On the home page you
           will find a search bar. Enter the country you'd like to visit to get
@@ -85,7 +85,7 @@ export default function AboutPage() {
           produced this app). We we're all involved in everything from product
           development to front and back end code!
         </p>
-        <h4>Team members -</h4>
+        <h4 aria-label = "information about the Jenga Team members">Team members -</h4>
         <TeamMembers />
         <p>Click on our images to view our GitHub profiles.</p>
       </div>

@@ -88,7 +88,7 @@ const Profile = ({ user, isAuthenticated, isLoading, coords }) => {
   return isAuthenticated ? (
     <div className="profile-background-image">
       <div className="profile-info">
-        <img className="profile-picture" src={user.picture} alt={user.name} />
+        <img className="profile-picture" src={user.picture} alt={user.name} aria-label="profile picture"/>
         <h2>{user.name.toUpperCase()}</h2>
       </div>
 
@@ -109,9 +109,9 @@ const Profile = ({ user, isAuthenticated, isLoading, coords }) => {
                     <img
                       className="image"
                       src={e.locationImage}
-                      alt="none"
+                      alt="location"
                     ></img>
-                    <h3>{timezone == 0 ? [] : timezone[index].timeZoneName}</h3>
+                    <h3 aria-label= "timezone">{timezone == 0 ? [] : timezone[index].timeZoneName}</h3>
                     {/* <h3>{timezone == 0 ? [] : timezone[index].timeZoneId}</h3> */}
                     <h3>
                       GMT {}
@@ -139,13 +139,14 @@ const Profile = ({ user, isAuthenticated, isLoading, coords }) => {
                         : Math.floor(weather[index].main.temp - 273.15) + " °C"}
                     </h3>
                     <img
+                      aria-label="average weather"
                       className="weather"
                       src={
                         weather == 0
                           ? ""
                           : `http://openweathermap.org/img/w/${weather[index].weather[0].icon}.png`
                       }
-                      alt="none"
+                      alt="average weather"
                     ></img>
                   </div>
                 </Link>
