@@ -58,7 +58,7 @@ export default function SearchBar({
     >
       {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
         <div className="search-bar-container">
-          <input aria-label="search"
+          <input aria-label="search for desired location"
             {...getInputProps({
               placeholder: "SEARCH",
               className: "location-search-input",

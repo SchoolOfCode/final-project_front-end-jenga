@@ -111,7 +111,7 @@ const Profile = ({ user, isAuthenticated, isLoading, coords }) => {
                       src={e.locationImage}
                       alt="location"
                     ></img>
-                    <h3 aria-label= "timezone">{timezone == 0 ? [] : timezone[index].timeZoneName}</h3>
+                    <h3 aria-label= "timezone information">{timezone == 0 ? [] : timezone[index].timeZoneName}</h3>
                     {/* <h3>{timezone == 0 ? [] : timezone[index].timeZoneId}</h3> */}
                     <h3>
                       GMT {}
@@ -139,7 +139,7 @@ const Profile = ({ user, isAuthenticated, isLoading, coords }) => {
                         : Math.floor(weather[index].main.temp - 273.15) + " °C"}
                     </h3>
                     <img
-                      aria-label="average weather"
+                      aria-label="this is the average weather"
                       className="weather"
                       src={
                         weather == 0
