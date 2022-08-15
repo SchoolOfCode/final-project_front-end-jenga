@@ -10,7 +10,7 @@ const Navbar = ({ user, isAuthenticated, isLoading }) => {
       <div className="logo">
         <div className="balloon-container">
           <Link to="/" className="nav-link">
-            <img className="balloon" src={svg} alt="SVG" />
+            <img className="balloon" src={svg} alt="green and white, stripy balloon"/>
           </Link>
         </div>
       </div>
@@ -36,6 +36,7 @@ const Navbar = ({ user, isAuthenticated, isLoading }) => {
           <Link to="/Profile">
             <div className="profile-image-container">
               <img
+                aria-label= "a logo displaying the first inital of the logged in user"
                 className="profile-image"
                 src={user.picture}
                 alt={user.name}

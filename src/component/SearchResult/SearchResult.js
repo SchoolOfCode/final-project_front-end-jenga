@@ -50,8 +50,8 @@ const SearchResult = ({ coords, user, isAuthenticated, noResults }) => {
         <ErrorPage />
       ) : (
         <div className="results-page">
-          <div className="top-picture">
-            <img src={imageUrl} alt="Location" className="location-image"></img>
+          <div className="top-picture" aria-label="an image of the searched location">
+            <img src={imageUrl} alt="Location" className="location-image" aria-label= "location"></img>
             <div className="lds-facebook">
               <div></div>
               <div></div>
@@ -62,6 +62,7 @@ const SearchResult = ({ coords, user, isAuthenticated, noResults }) => {
               {isAuthenticated && (
                 <button
                   className="save-button"
+                  aria-label="save button"
                   onClick={() => {
                     alert(`${location} has been saved to your profile.`);
                     putLocationByUser(user, coords, location, profileImage);
@@ -73,7 +74,7 @@ const SearchResult = ({ coords, user, isAuthenticated, noResults }) => {
             </div>
           </div>
           <div className="bottom-results">
-            <div className="text-govAPI">
+            <div className="text-govAPI" aria-label= "information about the location">
               {govAPI != 0 && (
                 <>
                   {govAPI.map(({ title, body }) => (
@@ -83,7 +84,7 @@ const SearchResult = ({ coords, user, isAuthenticated, noResults }) => {
               )}
             </div>
 
-            <div className="map">
+            <div className="map" aria-label = "map of the desired location">
               <MapContainer lat={lat} lng={lng} />
             </div>
           </div>

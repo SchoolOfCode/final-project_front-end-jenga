@@ -10,6 +10,7 @@ export default function TeamMembers() {
             <img
               src="https://avatars.githubusercontent.com/u/103646942?v=4"
               alt="team member - Josh"
+              aria-label= "image of Jenga team member Josh"
             ></img>
           </div>
         </a>
@@ -23,6 +24,7 @@ export default function TeamMembers() {
             <img
               src="https://avatars.githubusercontent.com/u/90448828?v=4"
               alt="team member - Eda"
+              aria-label= "image of Jenga team member Eda"
             ></img>
           </div>
         </a>
@@ -36,6 +38,7 @@ export default function TeamMembers() {
             <img
               src="https://avatars.githubusercontent.com/u/103136799?v=4"
               alt="team member - Nafiso"
+              aria-label= "image of Jenga team member Nafiso"
             ></img>
           </div>
         </a>
@@ -49,6 +52,7 @@ export default function TeamMembers() {
             <img
               src="https://avatars.githubusercontent.com/u/92371751?v=4"
               alt="team member - Gabor"
+              aria-label= "image of Jenga team member Gabor"
             ></img>
           </div>
         </a>
@@ -62,6 +66,7 @@ export default function TeamMembers() {
             <img
               src="https://avatars.githubusercontent.com/u/103888510?v=4"
               alt="team member - Arian"
+              aria-label= "image of Jenga team member Arian"
             ></img>
           </div>
         </a>
