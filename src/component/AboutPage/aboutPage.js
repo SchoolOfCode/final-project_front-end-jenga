@@ -18,7 +18,8 @@ export default function AboutPage() {
         <p>
           Log in with Google or create an account to be able to save your
           favourite destinations (this is unlimited!) to your profile page so
-          you can easily jump back to them!
+          you can easily jump back to them!By clicking your profile icon, you
+          can find all your favourites in one place.
         </p>
         <p>
           PLUS we are working on adding a checklist feature to each saved
