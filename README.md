@@ -85,7 +85,7 @@ This would allow you plan your travel by public transport or car within the city
 ## Lessons Learned
  - Best practices are called best practices for a reason!
  - Importance of Communication and Supporting each other
- - 
+ - Using new technology as a team coming together and supporting each other during the learning process.
  - Values of Teamwork
  - Collaborative problem solving
 ## Repositories
