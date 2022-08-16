@@ -4,7 +4,7 @@
 <h1 align="center">Finders Keepers by JENGA - Frontend repository</h1>
 
 
-## How the App Started
+## How the App Started    
 
 The FINDERS KEEPERS application was created during a 4 week project. It’s aim was to solve a problem. 
 The problem this app aimed to solve can be split into two sections:   
@@ -32,7 +32,7 @@ Live demo is available at https://finders-keepers-soc.netlify.app/
 
 ## Screenshots
 
-![App Screenshot](https://i.ibb.co/VC6gHcT/screenshot.jpg)
+![App Screenshot](https://i.ibb.co/ZW0vcMv/screen-2.jpg)
 
 
 ## Run Locally
@@ -82,10 +82,12 @@ Once the city search and places of interest are implemented, the next step is to
 This would allow you plan your travel by public transport or car within the city to reach your planned destinations.
 
 
-## Lesson Learned
- - First lesson Learned
- - Additional lesson Learned
- - And finally this is another lesson
+## Lessons Learned
+ - Best practices are called best practices for a reason!
+ - Importance of Communication and Supporting each other
+ - Using new technologies as a team coming together and supporting each other during the learning process.
+ - Values of Teamwork
+ - Collaborative problem solving
 ## Repositories
 
 Frontend:https://github.com/SchoolOfCode/final-project_front-end-jenga   
