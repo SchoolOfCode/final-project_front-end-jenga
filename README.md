@@ -82,10 +82,12 @@ Once the city search and places of interest are implemented, the next step is to
 This would allow you plan your travel by public transport or car within the city to reach your planned destinations.
 
 
-## Lesson Learned
- - First lesson Learned
- - Additional lesson Learned
- - And finally this is another lesson
+## Lessons Learned
+ - Best practices are called best practices for a reason!
+ - Importance of Communication and Supporting each other
+ - 
+ - Values of Teamwork
+ - Collaborative problem solving
 ## Repositories
 
 Frontend:https://github.com/SchoolOfCode/final-project_front-end-jenga   
