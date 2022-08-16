@@ -71,7 +71,7 @@ Start the server
 #### - Checklist: 
 we are working on adding a checklist feature to each saved location so you can be sure you have all you need before you travel!
 
-#### - City seach: 
+#### - City search: 
 We are planning to widen the search from Countries to Cities. You will be able to search for any major cities and find the same detailed information as you could find when searching for a country.
 
 #### - Place of Interest: 
