@@ -32,7 +32,7 @@ Live demo is available at https://finders-keepers-soc.netlify.app/
 
 ## Screenshots
 
-![App Screenshot](https://i.ibb.co/VC6gHcT/screenshot.jpg)
+![App Screenshot](https://i.ibb.co/ZW0vcMv/screen-2.jpg)
 
 
 ## Run Locally
