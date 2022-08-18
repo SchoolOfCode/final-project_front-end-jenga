@@ -58,11 +58,12 @@ Start the server
 
 ## Tech Stack
 
- -  JavaScript was our language of choice
+ - JavaScript was our language of choice
  - React was the development library we used
  - Auth0 is our app's authentication service
  - Cypress was used for Frontend testing
  - Various APIs were used, such as GoogleAPI, GovAPI and Unsplash
+ - We deployed our front-end on Netlify and we built a serverless back-end with AWS.
 
 
 
