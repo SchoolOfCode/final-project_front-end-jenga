@@ -70,13 +70,13 @@ Start the server
 ## Roadmap
 
 #### - Checklist: 
-we are working on adding a checklist feature to each saved location so you can be sure you have all you need before you travel!
+We are working on adding a checklist feature to each saved location so you can be sure you have all you need before you travel!
 
 #### - City search: 
 We are planning to widen the search from Countries to Cities. You will be able to search for any major cities and find the same detailed information as you could find when searching for a country.
 
 #### - Place of Interest: 
-After the city search, we planned to add places of interest on the map together with famous turist attractions.
+After the city search, we plan to add places of interest on the map together with famous tourist attractions.
 
 #### - Travel planner:
 Once the city search and places of interest are implemented, the next step is to add a trafic planner.
