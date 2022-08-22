@@ -1,0 +1,21 @@
+.googleMap{
+    width: 35vw !important;
+    height: 42vh !important;
+    margin-left: -19.45%;
+    margin-top: 0.5%;
+    z-index: 4;
+}
+
+.googleMap > div {
+    border-radius: 15px;
+}
+
+@media screen and (max-width: 600px) {
+    .googleMap > div{
+    width: 100vw !important;
+    height: 20vh !important;
+    position: relative !important;
+    z-index: 4;
+    border-radius:0;
+ }
+}

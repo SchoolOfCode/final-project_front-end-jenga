@@ -1,0 +1,90 @@
+<mxfile host="65bd71144e">
+    <diagram id="K-l_Abv2bdG6btdhcQRM" name="Page-1">
+        <mxGraphModel dx="2035" dy="661" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="4" value="" style="edgeStyle=none;html=1;" parent="1" source="2" target="3" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="2" target="9" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" style="edgeStyle=none;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" parent="1" source="2" target="5" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="App.js" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="414" y="10" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="" style="edgeStyle=none;html=1;" parent="1" source="3" target="21" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="" style="edgeStyle=none;html=1;" parent="1" source="3" target="23" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="NavBar" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="90" width="120" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" value="" style="edgeStyle=none;html=1;" parent="1" source="5" target="48" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="56" style="edgeStyle=none;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;" parent="1" source="5" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="360.2857142857142" y="230" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="5" value="Profile Page" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="250" y="180" width="110" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="8" target="25" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" style="edgeStyle=none;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" parent="1" source="8" target="27" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" style="edgeStyle=none;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" parent="1" source="8" target="29" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" style="edgeStyle=none;html=1;" parent="1" source="8" target="2" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="Search page" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="700" y="170" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="55" value="" style="edgeStyle=none;html=1;" parent="1" source="9" target="53" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="59" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="9" target="57">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="Hompage" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="440" y="180" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="AWS Cognitio/ Auth0&amp;nbsp;&lt;br&gt;Login/ LogOut buttons" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="20" y="200" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="Logo&amp;nbsp;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-120" y="100" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="Search Bar" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="640" y="290" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="Searched Country/city information&amp;nbsp;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="820" y="290" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="Map Api" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="990" y="300" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="48" value="saved Locations&amp;nbsp;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="245" y="270" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" value="Search Bar" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="500" y="340" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="57" value="button" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="370" y="330" width="120" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

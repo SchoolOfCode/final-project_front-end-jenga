@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis&display=swap");
+
+.location-search-input {
+  display: flex;
+  justify-content: center;
+  height: 3.5vw;
+  width: 60vw;
+  border-radius: 7px;
+  border-color: transparent;
+  font-size: 2vw;
+  font-family: "Dosis", sans-serif;
+  /* margin-top: 20vw; */
+  /* margin-right: 30vw; */
+}
+
+.autocomplete-dropdown-container {
+  font-size: 2.2vw;
+  background-color: #ffffff3d;
+  font-family: "Dosis", sans-serif;
+}
+
+.search-bar-container {
+  padding-left: 0.25vw;
+  padding-right: 0.25vw;
+}
+@media screen and (max-width: 900px) {
+  .location-search-input {
+    height: 6.5vw;
+    width: 80vw;
+    font-size: 5vw;
+  }
+  .autocomplete-dropdown-container {
+    font-size: vw;
+  }
+}

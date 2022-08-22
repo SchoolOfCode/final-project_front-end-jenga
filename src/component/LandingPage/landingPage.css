@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis&display=swap");
+
+.landing-page-edit {
+  background-image: url(/src/images/LandingImage2.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  -ms-content-zooming: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.search-tools {
+  margin-top: 33vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  backdrop-filter: blur(2px) saturate(100%);
+  -webkit-backdrop-filter: blur(1px) saturate(100%);
+  background-color: rgba(60, 145, 230, 0.1);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  padding-bottom: 2vh;
+}
+
+/* background-color: rgba(255, 255, 255, 0.1); */
+
+.where-to-next {
+  font-family: "Dosis", sans-serif;
+  color: white;
+  font-size: 4vw;
+  font-weight: 500;
+  margin: 0vh;
+  padding: 0.25vw;
+  -webkit-text-stroke-width: 0.01vw;
+  -webkit-text-stroke-color: rgba(255, 255, 255, 0.1);
+  border-radius: 15px 15px 0px 0px;
+}
+
+@media screen and (max-width: 900px) {
+  .where-to-next {
+    font-size: 7vw;
+  }
+}

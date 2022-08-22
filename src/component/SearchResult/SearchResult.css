@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis&display=swap");
+
+.results-page {
+  display: flex;
+  height: 100vh;
+  background-color: black;
+}
+
+.top-picture {
+  height: 53vh;
+  display: flex;
+  position: absolute;
+  top: 0%;
+  width: 100vw;
+}
+
+.location-image {
+  width: 100vw;
+  height: 63vh;
+  object-fit: cover;
+  z-index: 3;
+}
+
+.title-and-save {
+  position: absolute;
+  margin-top: 20vh;
+  margin-left: 5vw;
+  z-index: 4;
+}
+
+.country-name {
+  margin: 0;
+  font-family: "Dosis", sans-serif;
+  font-size: 7.25vw;
+  font-weight: 800;
+  color: white;
+  text-shadow: -1px 0 #3c91e6, 0 1px #3c91e6, 1px 0 #3c91e6, 0 -1px #3c91e6;
+  letter-spacing: 0.2vw;
+}
+
+.save-button {
+  cursor: pointer;
+  font-size: 1.25vw;
+  font-weight: 600;
+  border-radius: 7px;
+  padding: 1vh 1vw;
+  border: 0;
+  color: #000021;
+  background: #05d2a2;
+  letter-spacing: 1px;
+  text-decoration: none;
+  margin-left: 0.5vw;
+  text-shadow: -1px 0 #05d2a2, 0 1px #05d2a2, 1px 0 #05d2a2, 0 -1px #05d2a2;
+}
+.save-button:hover {
+  transition: all 0.1s ease;
+  box-shadow: 0 0 0 0 #fff, 0 0 0 3px #05d2a2;
+}
+
+.bottom-results {
+  display: flex;
+  flex-direction: row;
+  height: 45vh;
+  align-self: flex-end;
+}
+
+.map {
+  display: flex;
+  justify-content: center;
+  border-radius: 0px 15px 0px 0px;
+  width: 40vw;
+  max-width: 40vw;
+  background-color: #05d2a2;
+  z-index: 4;
+}
+
+.text-govAPI {
+  border-radius: 15px 0px 0px 0px;
+  width: 60vw;
+  overflow: scroll;
+  overflow-x: hidden;
+  background-color: whitesmoke;
+  z-index: 4;
+  text-decoration: none;
+}
+
+.lds-facebook {
+  display: inline-block;
+  position: absolute;
+  margin: -35px -35px 0 0;
+  height: 70px;
+  width: 70px;
+  right: 50%;
+  top: 50%;
+  z-index: 2;
+}
+.lds-facebook div {
+  display: inline-block;
+  position: absolute;
+  left: 8px;
+  width: 16px;
+  background: #fff;
+  animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+.lds-facebook div:nth-child(1) {
+  left: 8px;
+  animation-delay: -0.24s;
+}
+.lds-facebook div:nth-child(2) {
+  left: 32px;
+  animation-delay: -0.12s;
+}
+.lds-facebook div:nth-child(3) {
+  left: 56px;
+  animation-delay: 0;
+}
+@keyframes lds-facebook {
+  0% {
+    top: 8px;
+    height: 64px;
+  }
+  50%,
+  100% {
+    top: 24px;
+    height: 32px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .bottom-results {
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+    width: 100vw;
+  }
+
+  .text-govAPI{
+    width: 100vw;
+    height: 40vh;
+    overflow: scroll;
+    z-index: 4;
+    text-decoration: none;
+    border-radius: 0;
+    
+  }
+
+  .location-image{
+    height: 42vh;
+  }
+
+  .save-button{
+    font-size: 3vw;
+    padding: 1vh 3.5vw;
+  }
+
+  .country-name{
+    font-size: 13vw;
+  }
+
+  .title-and-save{
+    margin-top: 15vh;
+  }
+}
